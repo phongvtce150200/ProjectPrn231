@@ -25,11 +25,11 @@ namespace BusinessObject
         public ICollection<Patient> Patients { get; set; }
     }
 
-    public enum Gender 
+   /* public enum Gender 
     {
       Male = 1,
       Female = 0
-    }
+    }*/
 
     
 }

@@ -348,10 +348,10 @@ namespace BusinessObject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e3fd2e63-5cf1-44a0-81fd-4475932a9458",
+                            Id = "9de249ac-2e90-4804-84fd-9c4da74fd1f9",
                             AccessFailedCount = 0,
                             Birhtday = new DateTime(1990, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "7f61f1da-e111-4d5e-85a5-8ad598b2bd11",
+                            ConcurrencyStamp = "ced8e97c-684c-4491-84d7-f3686729e8e0",
                             Email = "admin@clinc.com",
                             EmailConfirmed = true,
                             FullName = "admin",
@@ -359,19 +359,19 @@ namespace BusinessObject.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CLINIC.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBLKyoJyCWhe0UOEiagY0QS76wuHxX/JCP75aThdqe5JBNmQEfO3PRnJYeMSlzwm9w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC2hQs+6df/RIs9UhRweUQI7yPbdDkWDxg/EMPPqPoHPyhidPemYMN/VZi8KHOKPUA==",
                             PhoneNumber = "0909090090",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "8647343b-4d04-4671-82a1-33c7841f7afd",
+                            SecurityStamp = "3859883d-09ca-456f-9f51-a478eaaad1da",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
                         new
                         {
-                            Id = "0cd28eff-0ab8-4fe8-bb42-69667bb2f95c",
+                            Id = "356a28a3-3bd8-4ed4-bdaa-9d97a60dd5c8",
                             AccessFailedCount = 0,
                             Birhtday = new DateTime(2001, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "45b69d88-01c5-4025-a46a-63247ec5df4a",
+                            ConcurrencyStamp = "fcf90b06-ab3b-4c2c-beaa-03e3b66219e3",
                             Email = "v.thanhphong1712@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Võ Thanh Phong",
@@ -379,19 +379,19 @@ namespace BusinessObject.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "V.THANHPHONG1712@GMAIL.COM",
                             NormalizedUserName = "PHONGVT1712",
-                            PasswordHash = "AQAAAAEAACcQAAAAENPJrqlID/hPZzOjnfh//wymu4sPxYvh1ui6FMGaySHj3vPbJOoJwIxPKVMvCgbJ1g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH+JBUKUvlroRJH6ke9Q6+QlwjhNOmpW2k5Fm56gaj+B0BX/HAYjdgZ2e5+bRszZ7Q==",
                             PhoneNumber = "0769339456",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "b2eb8ea5-a6f4-4937-b3b9-474cb8a90c89",
+                            SecurityStamp = "229a2d4f-d212-4796-8ff3-066c0ef0c662",
                             TwoFactorEnabled = false,
                             UserName = "phongvt1712"
                         },
                         new
                         {
-                            Id = "9a7fab7d-2e1c-44f6-883d-75bab7e9ae77",
+                            Id = "ceff92b4-8aac-4bb6-823d-fa7597d238f1",
                             AccessFailedCount = 0,
                             Birhtday = new DateTime(2001, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ConcurrencyStamp = "8138e93b-e19d-41cb-bf94-974678fec7e3",
+                            ConcurrencyStamp = "5bd26e53-85bd-44e6-bfbc-0884a845b2df",
                             Email = "hauphan@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Phan Công Hậu",
@@ -399,10 +399,10 @@ namespace BusinessObject.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "HAUPHAN@GMAIL.COM",
                             NormalizedUserName = "HAUPHAN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA3Rgg5FArl5GBv4w6sJF8Jioq1nUvjnMVPdOudn3UkOUM03P3Gna97cactHGxldiA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEO63eob4f8y84Z2VVhKpZkD2395EUjo/8xQY/8fwtlq30GWhh4mBiIlq7YW6/0xKIg==",
                             PhoneNumber = "0808080080",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "3de3b6c2-713c-4363-be1e-0ccaf1758146",
+                            SecurityStamp = "3459f40e-832a-4bf0-b126-db49970dab13",
                             TwoFactorEnabled = false,
                             UserName = "hauphan"
                         });
@@ -437,22 +437,22 @@ namespace BusinessObject.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8949eb84-0eed-445b-8af5-0f784a4da8aa",
-                            ConcurrencyStamp = "9e0dcf5d-084b-4b4c-918a-abfb5f7ee54e",
+                            Id = "9ab108dd-67e8-4b63-983f-d8847bd16222",
+                            ConcurrencyStamp = "c0b1aef4-7f58-4595-b862-b9b1e19f2c64",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "edcde8e0-29ba-492b-a9e7-47b52b700b30",
-                            ConcurrencyStamp = "5ba99b36-3376-4d60-8ff2-c057edeb369a",
+                            Id = "91055d2e-14d4-4ce6-8112-09eada887af9",
+                            ConcurrencyStamp = "60a5c589-2d66-4011-8897-116c18dbd87a",
                             Name = "Doctor",
                             NormalizedName = "DOCTOR"
                         },
                         new
                         {
-                            Id = "cda5a388-53c8-4556-82a4-654d43284787",
-                            ConcurrencyStamp = "4834f70f-eda2-478c-ae64-55fd2e6b5e3d",
+                            Id = "605ab6c5-276d-4312-b3f7-a64c98d00d0d",
+                            ConcurrencyStamp = "b83630a5-ff1c-406e-8353-20a0ab7bebd9",
                             Name = "Patient",
                             NormalizedName = "PATIENT"
                         });
