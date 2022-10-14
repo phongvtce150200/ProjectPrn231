@@ -1,0 +1,16 @@
+G:\PRN231\PRN231_Project\DataAccess\bin\Debug\net5.0\appsettings.json
+G:\PRN231\PRN231_Project\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
+G:\PRN231\PRN231_Project\DataAccess\bin\Debug\net5.0\DataAccess.dll
+G:\PRN231\PRN231_Project\DataAccess\bin\Debug\net5.0\DataAccess.pdb
+G:\PRN231\PRN231_Project\DataAccess\bin\Debug\net5.0\BusinessObject.dll
+G:\PRN231\PRN231_Project\DataAccess\bin\Debug\net5.0\BusinessObject.pdb
+G:\PRN231\PRN231_Project\DataAccess\obj\Debug\net5.0\DataAccess.csproj.AssemblyReference.cache
+G:\PRN231\PRN231_Project\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+G:\PRN231\PRN231_Project\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
+G:\PRN231\PRN231_Project\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
+G:\PRN231\PRN231_Project\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
+G:\PRN231\PRN231_Project\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CopyComplete
+G:\PRN231\PRN231_Project\DataAccess\obj\Debug\net5.0\DataAccess.dll
+G:\PRN231\PRN231_Project\DataAccess\obj\Debug\net5.0\refint\DataAccess.dll
+G:\PRN231\PRN231_Project\DataAccess\obj\Debug\net5.0\DataAccess.pdb
+G:\PRN231\PRN231_Project\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
