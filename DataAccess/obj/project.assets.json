@@ -6549,11 +6549,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+      "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
-      "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\obj\\",
+      "outputPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6570,8 +6570,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
+            "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
             }
           }
         }

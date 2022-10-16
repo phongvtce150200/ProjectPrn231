@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj": {}
+    "g:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj": {}
   },
   "projects": {
-    "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+    "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
+        "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
-        "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\obj\\",
+        "outputPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,14 +93,14 @@
         }
       }
     },
-    "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj": {
+    "g:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
+        "projectUniqueName": "g:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
         "projectName": "ClinicApi",
-        "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
+        "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
         "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
-        "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\obj\\",
+        "outputPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -117,8 +117,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj": {
-                "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj"
+              "g:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj": {
+                "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj"
               }
             }
           }
@@ -175,14 +175,14 @@
         }
       }
     },
-    "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
+    "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+        "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
-        "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\obj\\",
+        "outputPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -199,8 +199,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
+              "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
               }
             }
           }
@@ -234,14 +234,14 @@
         }
       }
     },
-    "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj": {
+    "g:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj",
+        "projectUniqueName": "g:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj",
+        "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
-        "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\obj\\",
+        "outputPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -258,11 +258,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
+              "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
               },
-              "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj"
+              "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj"
               }
             }
           }

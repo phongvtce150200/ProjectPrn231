@@ -39,3 +39,4 @@ G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\WebClient.csproj.CopyC
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\Shared\_LayoutDoctor.cshtml.g.cs
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\Shared\_LayoutHome.cshtml.g.cs
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\DoctorPage\Index.cshtml.g.cs
+G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\Medicine\Index.cshtml.g.cs

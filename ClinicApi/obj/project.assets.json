@@ -8231,11 +8231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
+      "projectUniqueName": "g:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
       "projectName": "ClinicApi",
-      "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
+      "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
       "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
-      "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\obj\\",
+      "outputPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8252,8 +8252,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj": {
-              "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj"
+            "g:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj": {
+              "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj"
             }
           }
         }
