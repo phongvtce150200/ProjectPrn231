@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BusinessObject"
+    "\\WebClient",
+    "\\WebClient\\Views",
+    "\\WebClient\\Views\\Shared",
+    "\\WebClient\\wwwroot"
   ],
-  "SelectedNode": "\\PRN231_Project.sln",
+  "SelectedNode": "\\WebClient\\Views\\Shared\\_LayoutDoctor.cshtml",
   "PreviewInSolutionExplorer": false
 }

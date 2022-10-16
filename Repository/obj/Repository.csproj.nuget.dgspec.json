@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\Repository\\Repository.csproj": {}
+    "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+    "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\obj\\",
+        "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
+        "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +79,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -88,21 +89,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
+    "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\obj\\",
+        "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
+        "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -116,8 +117,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
+              "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
               }
             }
           }
@@ -137,7 +138,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -146,21 +148,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\Repository\\Repository.csproj": {
+    "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\Repository\\Repository.csproj",
+        "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\Repository\\obj\\",
+        "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
+        "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -174,11 +176,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
+              "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
               },
-              "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\DataAccess.csproj"
+              "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -198,7 +200,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -207,7 +210,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
