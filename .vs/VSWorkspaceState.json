@@ -1,11 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\BusinessObject",
     "\\WebClient",
     "\\WebClient\\Views",
+    "\\WebClient\\Views\\Medicine",
     "\\WebClient\\Views\\Shared",
-    "\\WebClient\\wwwroot"
+    "\\WebClient\\wwwroot",
+    "\\WebClient\\wwwroot\\css"
   ],
-  "SelectedNode": "\\WebClient\\Views\\Shared\\_LayoutDoctor.cshtml",
+  "SelectedNode": "\\WebClient\\wwwroot\\css\\homecss.css",
   "PreviewInSolutionExplorer": false
 }
