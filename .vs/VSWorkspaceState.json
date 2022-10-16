@@ -1,11 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\BusinessObject",
     "\\WebClient",
     "\\WebClient\\Views",
+    "\\WebClient\\Views\\Medicine",
     "\\WebClient\\Views\\Shared",
-    "\\WebClient\\wwwroot"
+    "\\WebClient\\wwwroot",
+    "\\WebClient\\wwwroot\\css"
   ],
-  "SelectedNode": "\\PRN231_Project.sln",
+  "SelectedNode": "\\WebClient\\wwwroot\\css\\homecss.css",
   "PreviewInSolutionExplorer": false
 }

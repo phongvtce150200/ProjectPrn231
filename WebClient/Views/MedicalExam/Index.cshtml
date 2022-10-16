@@ -1,0 +1,178 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
+}
+<div class="page-header">
+    <h3 class="page-title">Medical Examination</h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Medical Examination</a></li>
+            @*<li class="breadcrumb-item active" aria-current="page">Form elements</li>*@
+        </ol>
+    </nav>
+</div>
+<div class="container d-flex">
+    <div class="col-md-2" style="margin-right:5px;">
+        <table class="table table-bordered border-secondary" style="margin-bottom:10px;">
+            <thead class="table-danger">
+                <tr>
+                    <th>
+                        <h5 style="color:#ffff;">Search</h5>
+                    </th>
+                </tr>
+            </thead>
+            <div>
+                <!-- chỗ này cần sroll box -->
+            <tbody style="text-align:center;">
+                <tr>
+                    <td>
+                        <form action="">
+                            <input class="form-control" type="text" placeholder="Find Patient"
+                                   style="text-align:center; width:150px;">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-decoration: underline;"><a href="#">Adam</a></td>
+                </tr>
+            </tbody>
+    </div>
+    </table>
+    <table class="table table-bordered border-secondary" style="text-align:center;">
+        <thead class="table-danger">
+            <tr>
+                <th>
+                    <h5 style="color:#fff;">Previous prescription</h5>
+                </th>
+            </tr>
+        </thead>
+        <!-- chỗ này cần sroll box -->
+        <tbody style="height:200px;">
+            <tr>
+                <td><a href="" style="text-decoration:none;">17/10/2022</a></td>
+            </tr>
+            <tr>
+                <td><a href="" style="text-decoration:none;">16/10/2022</a></td>
+            </tr>
+            <tr>
+                <td><a href="" style="text-decoration:none;">16/10/2022</a></td>
+            </tr>
+            <tr>
+                <td><a href="" style="text-decoration:none;">16/10/2022</a></td>
+            </tr>
+            <tr>
+                <td><a href="" style="text-decoration:none;">16/10/2022</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-success" style="margin-bottom:20px; margin-top: 20px;">Save and Print</button>
+    <button class="btn btn-warning">Create a new Presciption</button>
+</div>
+<div class="col-md-10">
+    <form action="">
+        <table class="table table-bordered border-secondary" style="margin-bottom:20px;">
+            <tr class="table-danger">
+                <th>
+                    <h5 style="color:#fff;">Presciption Infomation</h5>
+                </th>
+            </tr>
+            <tr>
+                <div>
+                <td class="container d-flex justify-content-between">
+                    Full Name: <input type="text" class="form-control" style="width:300px;">
+                    DoB: <input type="date" class="form-control" style="width:200px;">
+                    Gender: <select name="gender" id="">
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                    </select>
+                </td>
+</div>
+<div>
+    <td class="container d-flex justify-content-between">
+        Address: <input type="text" class="form-control" style="width:250px;">
+        City: <input type="text" class="form-control" style="width:200px;">
+        Phone Number: <input type="text" class="form-control" style="width:200px;">
+
+    </td>
+</div>
+<div>
+    <td class="container d-flex" style="justify-content:space-between;">
+        Pulse: <input type="number" placeholder="bpm" class="form-control" style="width:80px;">
+        Blood Pressure: <input type="number" placeholder="mmHg" class="form-control"
+                               style="width:100px;">
+        Temperature: <input type="number" placeholder="°C" class="form-control" style="width:80px;">
+        Weight: <input type="number" placeholder="Kg" class="form-control" style="width:80px;">
+        Height: <input type="number" placeholder="Cm" class="form-control" style="width:80px;">
+    </td>
+</div>
+                </tr>
+            </table>
+<table class="table table-bordered border-secondary" style="margin-bottom:20px;">
+    <thead>
+        <tr>
+            <th colspan="4" class="table-danger">
+                <div class="d-flex justify-content-between">
+                    <p style="color:#fff ;">Medicine List And Using</p>
+                    <button class="btn btn-success">Clear Presciption</button>
+                    <p style="color:#fff ;">Using Day:</p>  <input type="number" placeholder="Day" class="form-control"
+                                                                   style="width:80px;">
+                    <p style="color:#fff ;">Re-examination:</p>  <input type="checkbox">
+                    <p style="color:#fff ;">Re-examination day:</p>  <input type="date">
+                </div>
+
+            </th>
+        </tr>
+        <tr>
+            <th>Medicine Name</th>
+            <th>Using/day</th>
+            <th>Using/times</th>
+            <th>Method</th>
+        </tr>
+    </thead>
+    <tbody style="height: 170px;">
+        <tr>
+            <td>alo</td>
+            <td>alo</td>
+            <td>alo</td>
+            <td>alo</td>
+        </tr>
+    </tbody>
+    <tfoot>
+    <th colspan="4" style="text-align:right;">Total:</th>
+    </tfoot>
+</table>
+<table class="table table-bordered border-secondary">
+    <thead>
+        <tr>
+            <th colspan="4">
+                <div class="d-flex justify-content-between">
+                    <form action="">
+                        <input type="text" placeholder="Find Medicine" class="form-control"
+                               style="width:85%;">
+                        <button class="btn btn-warning">Adding Medicine</button>
+                    </form>
+                </div>
+
+            </th>
+        </tr>
+        <tr>
+            <th>Amount</th>
+            <th>Medicine Name</th>
+            <th>Type</th>
+            <th>Method</th>
+        </tr>
+    </thead>
+    <tbody style="height:200px;">
+        <tr>
+            <th>alo</th>
+            <th>alo</th>
+            <th>alo</th>
+            <th>alo</th>
+        </tr>
+    </tbody>
+</table>
+        </form>
+    </div>
+</div>
