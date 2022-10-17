@@ -4,48 +4,30 @@
 @{
     Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
 }
-<div class="page-header">
-    <h3 class="page-title">Medical Examination</h3>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Medical Examination</a></li>
-            @*<li class="breadcrumb-item active" aria-current="page">Form elements</li>*@
-        </ol>
-    </nav>
-</div>
 <div class="container d-flex">
     <div class="col-md-2" style="margin-right:5px;">
-        <table class="table table-bordered border-secondary" style="margin-bottom:10px;">
+        <table class="table table-bordered border-secondary">
             <thead class="table-danger">
                 <tr>
-                    <th>
-                        <h5 style="color:#ffff;">Search</h5>
-                    </th>
+                    <th><h5 style="color:#525252;">Search</h5></th>
                 </tr>
             </thead>
             <div>
                 <!-- chỗ này cần sroll box -->
-            <tbody style="text-align:center;">
-                <tr>
-                    <td>
-                        <form action="">
-                            <input class="form-control" type="text" placeholder="Find Patient"
-                                   style="text-align:center; width:150px;">
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-decoration: underline;"><a href="#">Adam</a></td>
-                </tr>
-            </tbody>
-    </div>
-    </table>
-    <table class="table table-bordered border-secondary" style="text-align:center;">
+                <tbody>
+                    <tr>
+                        <td><form action=""><input class="form-control" type="text" placeholder="Find Patient" style="text-align:center;"></form></td>
+                    </tr>
+                    <tr>
+                        <td style="text-decoration: underline;">adam</td>
+                    </tr>
+                </tbody>
+            </div>
+        </table>
+    <table class="table table-bordered border-secondary">
         <thead class="table-danger">
             <tr>
-                <th>
-                    <h5 style="color:#fff;">Previous prescription</h5>
-                </th>
+                <th><h5 style="color:#525252">Previous prescription</h5></th>
             </tr>
         </thead>
         <!-- chỗ này cần sroll box -->
@@ -67,31 +49,28 @@
             </tr>
         </tbody>
     </table>
-    <button class="btn btn-success" style="margin-bottom:20px; margin-top: 20px;">Save and Print</button>
-    <button class="btn btn-warning">Create a new Presciption</button>
+    <div style="align-items:center; flex-direction: column; justify-content: space-around; display: flex;">
+        <button class="btn btn-success" style="margin-bottom:20px;">Save and Print</button>
+        <button class="btn btn-warning" style="color:#fff;">Create a new Presciption</button>
+    </div>
 </div>
 <div class="col-md-10">
     <form action="">
-        <table class="table table-bordered border-secondary" style="margin-bottom:20px;">
+        <table class="table table-bordered border-secondary">
             <tr class="table-danger">
-                <th>
-                    <h5 style="color:#fff;">Presciption Infomation</h5>
-                </th>
+                <th><h5 style="color:#525252">Presciption Infomation</h5></th>
             </tr>
             <tr>
                 <div>
                 <td class="container d-flex justify-content-between">
-                    Full Name: <input type="text" class="form-control" style="width:300px;">
+                    Full Name: <input type="text" class="form-control" style="width:500px;">
                     DoB: <input type="date" class="form-control" style="width:200px;">
-                    Gender: <select name="gender" id="">
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
-                    </select>
+                    Gender: <select name="gender" id=""><option value="1">Male</option> <option value="2">Female</option></select>
                 </td>
 </div>
 <div>
     <td class="container d-flex justify-content-between">
-        Address: <input type="text" class="form-control" style="width:250px;">
+        Address: <input type="text" class="form-control" style="width:300px;">
         City: <input type="text" class="form-control" style="width:200px;">
         Phone Number: <input type="text" class="form-control" style="width:200px;">
 
@@ -100,26 +79,24 @@
 <div>
     <td class="container d-flex" style="justify-content:space-between;">
         Pulse: <input type="number" placeholder="bpm" class="form-control" style="width:80px;">
-        Blood Pressure: <input type="number" placeholder="mmHg" class="form-control"
-                               style="width:100px;">
+        Blood Pressure: <input type="number" placeholder="mmHg" class="form-control" style="width:100px;">
         Temperature: <input type="number" placeholder="°C" class="form-control" style="width:80px;">
         Weight: <input type="number" placeholder="Kg" class="form-control" style="width:80px;">
         Height: <input type="number" placeholder="Cm" class="form-control" style="width:80px;">
     </td>
 </div>
-                </tr>
-            </table>
-<table class="table table-bordered border-secondary" style="margin-bottom:20px;">
+                    </tr>
+                </table>
+<table class="table table-bordered border-secondary">
     <thead>
         <tr>
             <th colspan="4" class="table-danger">
                 <div class="d-flex justify-content-between">
-                    <p style="color:#fff ;">Medicine List And Using</p>
+                    <p style="color:#525252;">Medicine List And Using</p>
                     <button class="btn btn-success">Clear Presciption</button>
-                    <p style="color:#fff ;">Using Day:</p>  <input type="number" placeholder="Day" class="form-control"
-                                                                   style="width:80px;">
-                    <p style="color:#fff ;">Re-examination:</p>  <input type="checkbox">
-                    <p style="color:#fff ;">Re-examination day:</p>  <input type="date">
+                    <p style="color:#525252;">Using Day:</p><input type="number" placeholder="Day" class="form-control" style="width:80px;">
+                    <p style="color:#525252;">Re-examination:</p> <input type="checkbox" class="form-check-input">
+                    <p style="color:#525252;">Re-examination day:</p><input type="date">
                 </div>
 
             </th>
@@ -149,9 +126,8 @@
             <th colspan="4">
                 <div class="d-flex justify-content-between">
                     <form action="">
-                        <input type="text" placeholder="Find Medicine" class="form-control"
-                               style="width:85%;">
-                        <button class="btn btn-warning">Adding Medicine</button>
+                        <input type="text" placeholder="Find Medicine" class="form-control" style="width:85%;height:40px;">
+                        <button class="btn btn-warning" style="height:40px; color:#fff;">Add Medicine</button>
                     </form>
                 </div>
 
@@ -173,6 +149,6 @@
         </tr>
     </tbody>
 </table>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
