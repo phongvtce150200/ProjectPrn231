@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;600&display=swap"
           rel="stylesheet" />
-    <link rel="shortcut icon" href="./img/VTP2 1.svg" />
+    <link rel="shortcut icon" href="./img/VTP2 1.svg" />  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>EGO Clinic</title>
 </head>
 <body>
@@ -56,15 +57,16 @@
              class="img-form-center" />
     </div>
     <!-- form-right -->
+    
     <div class="container" id="container">
-        <!-- <div class="form-right-login">
+        <form class="form-right-login" id="loginForm">
           <h2>Welcome User</h2>
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
           <button class="confrim">Sign In</button>
-        </div> -->
-        <div class="form-right-register">
+        </form> 
+        <form class="form-right-register" id="registerForm">
             <h2>Register for more</h2>
             <input type="text" placeholder="Username" />
             <input type="email" placeholder="Email" />
@@ -72,11 +74,11 @@
             <input type="password" placeholder="Confirm Password" />
             <a href="#">Forgot your password?</a>
             <button class="confrim">Register  </button>
-        </div>
+        </form>
     </div>
     <script src="https://kit.fontawesome.com/d9a92be812.js"
             crossorigin="anonymous"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/home.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
     @RenderBody()
 </body>

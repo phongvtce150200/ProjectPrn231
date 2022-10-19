@@ -6,6 +6,8 @@ namespace WebClient.Controllers
     {
         public IActionResult Index()
         {
+            string active = "active";
+            ViewBag.ReceivePatient = active;
             return View();
         }
     }
