@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {}
+    "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+    "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
+        "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
-        "outputPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\obj\\",
+        "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -93,14 +93,14 @@
         }
       }
     },
-    "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
+    "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+        "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
-        "outputPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\obj\\",
+        "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -117,8 +117,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
+              "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
               }
             }
           }
@@ -132,6 +132,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

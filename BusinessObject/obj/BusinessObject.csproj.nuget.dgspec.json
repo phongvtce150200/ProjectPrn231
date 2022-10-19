@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {}
+    "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {}
   },
   "projects": {
-    "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+    "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
+        "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
-        "outputPath": "g:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\obj\\",
+        "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",

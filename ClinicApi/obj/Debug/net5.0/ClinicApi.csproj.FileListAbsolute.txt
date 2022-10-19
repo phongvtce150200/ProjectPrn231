@@ -622,3 +622,4 @@ G:\PRN231\GITHUB\ProjectPrn231\ClinicApi\obj\Debug\net5.0\refint\ClinicApi.dll
 G:\PRN231\GITHUB\ProjectPrn231\ClinicApi\obj\Debug\net5.0\ClinicApi.pdb
 G:\PRN231\GITHUB\ProjectPrn231\ClinicApi\obj\Debug\net5.0\ClinicApi.genruntimeconfig.cache
 G:\PRN231\GITHUB\ProjectPrn231\ClinicApi\obj\Debug\net5.0\ref\ClinicApi.dll
+G:\PRN231\GITHUB\ProjectPrn231\ClinicApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
