@@ -2,10 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\BusinessObject",
+    "\\ClinicApi",
     "\\WebClient",
+    "\\WebClient\\Controllers",
     "\\WebClient\\Views",
     "\\WebClient\\Views\\Shared"
   ],
-  "SelectedNode": "\\WebClient\\Views\\Shared\\_LayoutDoctor.cshtml",
+  "SelectedNode": "\\WebClient\\Controllers\\AppointmentController.cs",
   "PreviewInSolutionExplorer": false
 }

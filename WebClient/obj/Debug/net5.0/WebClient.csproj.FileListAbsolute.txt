@@ -44,3 +44,4 @@ G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\MedicalExa
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\ReceivePatient\Index.cshtml.g.cs
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\Appointment\Index.cshtml.g.cs
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\bin\Debug\net5.0\Newtonsoft.Json.dll
+G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\Patient\Index.cshtml.g.cs

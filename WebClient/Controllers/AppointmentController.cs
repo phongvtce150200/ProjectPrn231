@@ -11,6 +11,8 @@ namespace WebClient.Controllers
     {
         public IActionResult Index()
         {
+            string active = "active";
+            ViewBag.Appointment = active;
             return View();
         }
         [HttpGet]

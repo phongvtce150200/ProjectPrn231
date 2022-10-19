@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
+}
+<div>
+    <div>
+        <button class="btn btn-success">Create new Medicine</button>
+        <button class="btn btn-warning">Sort by inventory quantity</button>
+        <button class="btn btn-warning">Sort by expiration date</button>
+        <form style="float:right;">
+            <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Search" />
+                <button class="input-group-text border-0">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Medicine Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Expiration</th>
+                <th scope="col">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>mdo</td>
+                <td>
+                    <a href="#editEmployeeModal" class="edit" data-toggle="modal" style="text-decoration:none; color:orange;">|<i class="fa-solid fa-pen-to-square"></i>|</a>
+                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal" style="text-decoration:none; color:red;">|<i class="fa-solid fa-trash"></i>|</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
