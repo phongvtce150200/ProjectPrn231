@@ -2,13 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\BusinessObject",
+    "\\WebClient",
     "\\WebClient\\Views",
-    "\\WebClient\\Views\\MedicalExam",
-    "\\WebClient\\Views\\Medicine",
-    "\\WebClient\\Views\\Shared",
-    "\\WebClient\\wwwroot",
-    "\\WebClient\\wwwroot\\css"
+    "\\WebClient\\Views\\Shared"
   ],
-  "SelectedNode": "\\BusinessObject\\ApplicationDbContext.cs",
+  "SelectedNode": "\\WebClient\\Views\\Shared\\_LayoutDoctor.cshtml",
   "PreviewInSolutionExplorer": false
 }

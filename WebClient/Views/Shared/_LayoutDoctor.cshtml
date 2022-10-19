@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <!-- Font Awsome -->
     <script src="https://kit.fontawesome.com/d9a92be812.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Main css -->
     <link rel="stylesheet" href="./css/dashboard.css">
     <title>Admin Page</title>
@@ -31,10 +32,10 @@
                     <a asp-action="Index" asp-controller="MedicalExam"><i class="fa-solid fa-stethoscope"></i><span>Medical Exam</span></a>
                 </li>
                 <li>
-                    <a href=""><i class="fa-solid fa-calendar-check"></i><span>Appointment</span></a>
+                    <a asp-action="Index" asp-controller="Appointment"><i class="fa-solid fa-calendar-check"></i><span>Appointment</span></a>
                 </li>
                 <li>
-                    <a href=""><i class="fa-solid fa-hand-holding-medical"></i><span>Recieve Patient</span></a>
+                    <a asp-action="Index" asp-controller="ReceivePatient"><i class="fa-solid fa-hand-holding-medical"></i><span>Recieve Patient</span></a>
                 </li>
                 <li>
                     <a asp-action="Index" asp-controller="Medicine"><i class="fa-solid fa-capsules"></i><span>Medicine Manage</span></a>
@@ -76,6 +77,7 @@
         </header>
         <main>
             @RenderBody()
+            @RenderSection("Scripts",false)
         </main>
     </div>
 

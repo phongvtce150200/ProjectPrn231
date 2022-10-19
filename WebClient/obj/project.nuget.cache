@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5IQaOwSWp8rqNTMIoQ3zH2NjmV6+CcHrKNW0J6rxgh4GPCEtF3gbDZ4Z+qci7GgBcBcWnn07I0GOIb1djz0PHg==",
+  "dgSpecHash": "6ii395j1fIU/4gd+AEA+lvsLEc9AcctGDb1MmDIkLZ9IPBqRaCpFZJw/uhwtGlnVzw+MCA78Ie5JaP6WGuTd8Q==",
   "success": true,
   "projectFilePath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\WebClient\\WebClient.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\vthan\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

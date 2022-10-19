@@ -50,6 +50,7 @@ namespace BusinessObject
             modelBuilder.Entity<IdentityRole>().HasData(
                 new IdentityRole { Name = "Admin", NormalizedName = "ADMIN".ToUpper() },
                 new IdentityRole { Name = "Doctor", NormalizedName = "DOCTOR".ToUpper() },
+                new IdentityRole { Name = "Nurse", NormalizedName = "NURSE".ToUpper() },
                 new IdentityRole { Name = "Patient", NormalizedName = "PATIENT".ToUpper() });
 
             var hasher = new PasswordHasher<IdentityUser>();
@@ -68,5 +69,6 @@ namespace BusinessObject
                 }
             }
         }
+
     }
 }
