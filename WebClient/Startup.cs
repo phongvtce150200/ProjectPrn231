@@ -23,7 +23,14 @@ namespace WebClient
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            IMvcBuilder builder = services.AddControllersWithViews();
+
+            var enviroment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIROMENT");
+            if(enviroment == null)
+            {
+                builder.AddRazorRuntimeCompilation();
+            }
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

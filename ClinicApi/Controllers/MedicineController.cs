@@ -21,7 +21,7 @@ namespace ClinicApi.Controllers
             var list = _medicineRepository.GetAllMedicine();
             if(list == null)
             {
-                return NotFound();
+                return NoContent();
             }
             return Ok(list);
         }

@@ -1,4 +1,5 @@
 ﻿using BusinessObject;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ namespace ClinicApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PatientController : ControllerBase
     {
         private IPatientRepository _patientRepository = new PatientRepository();

@@ -4,14 +4,14 @@ namespace WebClient.Models
 {
     public class EventViewModel
     {
-        public Int64 EventID { get; set; }
+        public Int64 eventID { get; set; }
 
-        public String Subject { get; set; }
+        public string title { get; set; }
 
-        public DateTime Start { get; set; }
+        public DateTime start { get; set; }
 
-        public DateTime End { get; set; }
+        public DateTime end { get; set; }
 
-        public bool IsFullDay { get; set; }
+        public bool isFullDay { get; set; }
     }
 }

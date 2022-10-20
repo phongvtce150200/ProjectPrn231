@@ -1,4 +1,5 @@
 ﻿using BusinessObject;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Repository;
@@ -10,6 +11,7 @@ namespace ClinicApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class InvoiceController : ControllerBase
     {
         private IInvoiceRepository _invoiceRepository = new InvoiceRepository();

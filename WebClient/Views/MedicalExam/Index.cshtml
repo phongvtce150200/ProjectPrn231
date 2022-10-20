@@ -4,6 +4,8 @@
 @{
     Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
 }
+<!-- KnockoutJs -->
+    <script src="~/js/knockout-3.5.1.js"></script>
 <div class="container d-flex">
     <div class="col-md-2" style="margin-right:5px;">
         <table class="table table-bordered border-secondary">
@@ -110,10 +112,10 @@
     </thead>
     <tbody style="height: 170px;">
         <tr>
+            <td>alo12345</td>
             <td>alo</td>
             <td>alo</td>
-            <td>alo</td>
-            <td>alo</td>
+            <td>alo1234</td>
         </tr>
     </tbody>
     <tfoot>
@@ -127,7 +129,7 @@
                 <div class="d-flex justify-content-between">
                     <form action="">
                         <input type="text" placeholder="Find Medicine" class="form-control" style="width:85%;height:40px;">
-                        <button class="btn btn-warning" style="height:40px; color:#fff;">Add Medicine</button>
+                        <button class="btn btn-warning" style="height:40px; color:#fff;" data-bind="click : addMedicine">Add Medicine</button>
                     </form>
                 </div>
 
@@ -140,15 +142,45 @@
             <th>Method</th>
         </tr>
     </thead>
-    <tbody style="height:200px;">
+    <tbody style="height:200px;" data-bind="foreach: medicines">
         <tr>
+            <th><span data-bind="text: $data.medicinename"></span> alo</th>
             <th>alo</th>
             <th>alo</th>
-            <th>alo</th>
-            <th>alo</th>
+            <th><span data-bind="text: $data.method"></span> alo</th>
         </tr>
     </tbody>
 </table>
             </form>
         </div>
     </div>
+   @* <h2>Medicine Table</h2>
+    <button data-bind="click : addMedicine">Add Medicine</button>
+    <ul data-bind="foreach: medicines">
+        <li>
+            <span data-bind="text: $data.medicinename"></span>
+            <span data-bind="text: $data.method"></span>
+            <button data-bind="click: remove">Remove</button>
+        </li>
+    </ul>
+*@
+<script>
+    function medicine(medicinename,method){
+        return{
+            medicinename: ko.observable(medicinename),
+            method : ko.observable(method),
+            remove: function(){
+                medicinetable.medicines.remove(this)
+            }
+        };
+    }
+    
+    var medicinetable ={
+        medicines: ko.observableArray([new medicine("Panadol","Uong"), new medicine("Decolgen","Hit")]),
+            addMedicine: function () {
+            this.medicines.push(new medicine("new thuoc", "new method"));
+        }
+    }
+
+    ko.applyBindings(medicinetable);
+</script>

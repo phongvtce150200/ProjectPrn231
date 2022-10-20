@@ -1,71 +1,71 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System;
-using WebClient.Models;
-using System.Text.Json.Serialization;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text.Json;
+using System.Threading.Tasks;
+using WebClient.Models;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace WebClient.Controllers
 {
     public class AppointmentController : Controller
     {
+        private readonly HttpClient client = null;
+        private string ScheduleDetailsUrl = "";
+
+        public AppointmentController()
+        {
+            client = new HttpClient();
+            var contentType = new MediaTypeWithQualityHeaderValue("application/json");
+            client.DefaultRequestHeaders.Accept.Add(contentType);
+            ScheduleDetailsUrl = "https://localhost:5001/api/ScheduleDetails";
+        }
         public IActionResult Index()
         {
             string active = "active";
             ViewBag.Appointment = active;
             return View();
         }
-        [HttpGet]
-        /*   public IActionResult GetEvents(DateTime start, DateTime end)
-           {
-               var viewModel = new EventViewModel();
-               var events = new List<EventViewModel>();
-               start = DateTime.Today.AddDays(-14);
-               end = DateTime.Today.AddDays(-11);
-
-               for (var i = 1; i <= 5; i++)
-               {
-                   events.Add(new EventViewModel()
-                   {
-                       EventID = i,
-                       Subject = "Event " + i,
-                       Start = start,
-                       End = end,
-                       IsFullDay = false
-                   });
-
-                   start = start.AddDays(7);
-                   end = end.AddDays(7);
-               }
-
-               var json = JsonConvert.SerializeObject(events);
-               return Ok(json);
-           }*/
-        public JsonResult GetEvents(DateTime start, DateTime end)
+        public async Task<IActionResult> GetEvents(int id = 1)
         {
-            //creat view model for test FE
-            var viewModel = new EventViewModel();
-            var events = new List<EventViewModel>();
-            start = DateTime.Today.AddDays(-14);
-            end = DateTime.Today.AddDays(-11);
-
-            for (var i = 1; i <= 5; i++)
+            HttpResponseMessage respone = await client.GetAsync(ScheduleDetailsUrl + "/" + id);
+            if (respone.IsSuccessStatusCode)
             {
-                events.Add(new EventViewModel()
+                var data = respone.Content.ReadAsStringAsync().Result;
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+                List<scheduleDetails> list = JsonSerializer.Deserialize<List<scheduleDetails>>(data, options);
+                if (list == null)
                 {
-                    EventID = i,
-                    Subject = "Event " + i,
-                    Start = start,
-                    End = end,
-                    IsFullDay = false
-                });
+                    return View();
+                }
+                var events = new List<EventViewModel>();
 
-                start = start.AddDays(7);
-                end = end.AddDays(7);
+                foreach (var item in list)
+                {
+
+                    EventViewModel eventViewModel = new EventViewModel()
+                    {
+                        eventID = item.ScheduleId,
+                        title = "Meeting with Patient",
+                        start = item.StartTime,
+                        end = item.EndTime,
+                        isFullDay = false
+                    };
+                    events.Add(eventViewModel);
+                    events.ToArray();
+
+                }
+                JsonSerializerSettings jss = new JsonSerializerSettings();
+                jss.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                string jsons = JsonConvert.SerializeObject(events, jss);
+                return Content(jsons, "application/json");
             }
-
-
-            return Json(events.ToArray());
+            return null;
         }
     }
 }

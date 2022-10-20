@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BusinessObject;
 using Repository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ClinicApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PrescriptionsController : ControllerBase
     {
         private IPrescriptionRepository _PrescriptionRepository = new PrescriptionRepository();

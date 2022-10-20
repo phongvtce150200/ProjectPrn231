@@ -3,22 +3,15 @@ using DataAccess;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Repository;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ClinicApi
 {
@@ -37,7 +30,6 @@ namespace ClinicApi
             services.AddDbContext<ApplicationDbContext>();
 
             //Add Identity
-
             services.AddIdentity<User, IdentityRole>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = true;
@@ -56,52 +48,73 @@ namespace ClinicApi
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ClinicApi", Version = "v1" });
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = @"## Enter 'Bearer' [space] and then your token in the text input below.  <br><br> `Example: 'Bearer 123456789asdfjkhsdf'`",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                         new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        },
+                        Scheme = "oauth2",
+                        Name = "Bearer",
+                        In = ParameterLocation.Header,
+                    },
+                    new List<string>()
+                    }
+
+                });
             });
 
-
-
-
-
-            //services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
-
-
             //Declare DI
-            //services.AddTransient<UserManager<User>, UserManager<User>>();
-            //services.AddTransient<SignInManager<User>, SignInManager<User>>();
-            //services.AddTransient<RoleManager<User>, RoleManager<User>>();
-
-
             services.AddTransient<AuthenticationDAO>();
             services.AddTransient<IAuthenticationRepository, AuthenticationRepository>();
 
+            // Adding Authentication  
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            });
 
-
-
-
-
-
-
+            //Jwt Bearer Register
             var secretKey = Configuration["JWT:Key"];
             var secretKeyBytes = Encoding.UTF8.GetBytes(secretKey);
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
+                    options.RequireHttpsMetadata = false;
+                    options.SaveToken = true;
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         //Cap Token
                         ValidateIssuer = true,
-                        //ValidateAudience = false,
+                        ValidateAudience = true,
 
                         //Sinh Token
                         ValidIssuer = Configuration["JWT:Issuer"],
-                        //ValidAudience = Configuration["JWT:Audience"],
+                        ValidAudience = Configuration["JWT:Issuer"],
                         ValidateIssuerSigningKey = true,
+                        ClockSkew = System.TimeSpan.Zero,
                         IssuerSigningKey = new SymmetricSecurityKey(secretKeyBytes)
                     };
                 });
 
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -115,9 +128,9 @@ namespace ClinicApi
             }
 
             app.UseHttpsRedirection();
-            
-            app.UseRouting();
             app.UseAuthentication();
+            app.UseRouting();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

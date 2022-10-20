@@ -21,10 +21,9 @@
                     center: 'title',
                     right: 'month,basicWeek,basicDay,agenda'
                 },
-                firstDay: 1, //The day that each week begins (Monday=1)
-                slotMinutes: 60,
-            events: '/Appointment/GetEvents'
+            events: '/Appointment/GetEvents',
+            timeFormat: 'h(:mm)t',
+            eventLimit: true // allow "more" link when too many events
             });
-
     })
 </script>

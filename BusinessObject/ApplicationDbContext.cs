@@ -9,9 +9,6 @@ namespace BusinessObject
 {
     public class ApplicationDbContext : IdentityDbContext<User>
     {
-        public ApplicationDbContext()
-        {
-        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())

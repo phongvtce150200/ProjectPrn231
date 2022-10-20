@@ -6,8 +6,9 @@
     "\\WebClient",
     "\\WebClient\\Controllers",
     "\\WebClient\\Views",
+    "\\WebClient\\Views\\MedicalExam",
     "\\WebClient\\Views\\Shared"
   ],
-  "SelectedNode": "\\WebClient\\Controllers\\AppointmentController.cs",
+  "SelectedNode": "\\WebClient\\Views\\MedicalExam\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
