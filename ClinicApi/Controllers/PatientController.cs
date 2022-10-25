@@ -1,6 +1,7 @@
 ﻿using BusinessObject;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Repository;
 using System.Collections.Generic;
 
@@ -9,21 +10,25 @@ namespace ClinicApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class PatientController : ControllerBase
     {
         private IPatientRepository _patientRepository = new PatientRepository();
 
         // GET: api/<PatientController>
         [HttpGet]
-        public ActionResult<IEnumerable<Patient>> GetMedicine()
+        public ActionResult<IEnumerable<Patient>> GetPatient()
         {
             var list = _patientRepository.GetAllPatient();
             if (list == null)
             {
                 return NotFound();
             }
-            return Ok(list);
+            JsonSerializerSettings jss = new JsonSerializerSettings();
+            jss.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            string jsons = JsonConvert.SerializeObject(list, jss);
+            return Content(jsons, "application/json");
+
         }
 
         // GET api/<PatientController>/5
@@ -36,7 +41,10 @@ namespace ClinicApi.Controllers
             {
                 return NotFound();
             }
-            return Ok(p);
+            JsonSerializerSettings jss = new JsonSerializerSettings();
+            jss.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            string jsons = JsonConvert.SerializeObject(p, jss);
+            return Content(jsons, "application/json");
         }
 
         // POST api/<PatientController>

@@ -1,186 +1,198 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Patient
 @{
     Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
 }
-<!-- KnockoutJs -->
-    <script src="~/js/knockout-3.5.1.js"></script>
 <div class="container d-flex">
     <div class="col-md-2" style="margin-right:5px;">
         <table class="table table-bordered border-secondary">
             <thead class="table-danger">
                 <tr>
-                    <th><h5 style="color:#525252;">Search</h5></th>
+                    <th>
+                        <h5 style="color:#525252;">Search</h5>
+                    </th>
                 </tr>
             </thead>
             <div>
                 <!-- chỗ này cần sroll box -->
                 <tbody>
                     <tr>
-                        <td><form action=""><input class="form-control" type="text" placeholder="Find Patient" style="text-align:center;"></form></td>
+                        <td>
+                            <form action=""><input class="form-control" type="text" placeholder="Find Patient"
+                                    style="text-align:center;"></form>
+                        </td>
                     </tr>
                     <tr>
-                        <td style="text-decoration: underline;">adam</td>
+                        <td style="text-decoration: underline;">đã xử lý được ở receive</td>
                     </tr>
                 </tbody>
             </div>
         </table>
-    <table class="table table-bordered border-secondary">
-        <thead class="table-danger">
-            <tr>
-                <th><h5 style="color:#525252">Previous prescription</h5></th>
-            </tr>
-        </thead>
-        <!-- chỗ này cần sroll box -->
-        <tbody style="height:200px;">
-            <tr>
-                <td><a href="" style="text-decoration:none;">17/10/2022</a></td>
-            </tr>
-            <tr>
-                <td><a href="" style="text-decoration:none;">16/10/2022</a></td>
-            </tr>
-            <tr>
-                <td><a href="" style="text-decoration:none;">16/10/2022</a></td>
-            </tr>
-            <tr>
-                <td><a href="" style="text-decoration:none;">16/10/2022</a></td>
-            </tr>
-            <tr>
-                <td><a href="" style="text-decoration:none;">16/10/2022</a></td>
-            </tr>
-        </tbody>
-    </table>
-    <div style="align-items:center; flex-direction: column; justify-content: space-around; display: flex;">
-        <button class="btn btn-success" style="margin-bottom:20px;">Save and Print</button>
-        <button class="btn btn-warning" style="color:#fff;">Create a new Presciption</button>
-    </div>
-</div>
-<div class="col-md-10">
-    <form action="">
         <table class="table table-bordered border-secondary">
-            <tr class="table-danger">
-                <th><h5 style="color:#525252">Presciption Infomation</h5></th>
-            </tr>
-            <tr>
-                <div>
-                    <td class="container d-flex justify-content-between">
-                        Full Name: <input type="text" class="form-control" style="width:500px;">
-                        DoB: <input type="date" class="form-control" style="width:200px;">
-                        Gender: <select name="gender" id=""><option value="1">Male</option> <option value="2">Female</option></select>
-                    </td>
-                </div>
-                <div>
-                    <td class="container d-flex justify-content-between">
-                        Address: <input type="text" class="form-control" style="width:300px;">
-                        City: <input type="text" class="form-control" style="width:200px;">
-                        Phone Number: <input type="text" class="form-control" style="width:200px;">
-
-                    </td>
-                </div>
-                <div>
-                    <td class="container d-flex" style="justify-content:space-between;">
-                        Pulse: <input type="number" placeholder="bpm" class="form-control" style="width:80px;">
-                        Blood Pressure: <input type="number" placeholder="mmHg" class="form-control" style="width:100px;">
-                        Temperature: <input type="number" placeholder="°C" class="form-control" style="width:80px;">
-                        Weight: <input type="number" placeholder="Kg" class="form-control" style="width:80px;">
-                        Height: <input type="number" placeholder="Cm" class="form-control" style="width:80px;">
-                    </td>
-                </div>
-            </tr>
-</table>
-<table class="table table-bordered border-secondary">
-    <thead>
-        <tr>
-            <th colspan="4" class="table-danger">
-                <div class="d-flex justify-content-between">
-                    <p style="color:#525252;">Medicine List And Using</p>
-                    <button class="btn btn-success">Clear Presciption</button>
-                    <p style="color:#525252;">Using Day:</p><input type="number" placeholder="Day" class="form-control" style="width:80px;">
-                    <p style="color:#525252;">Re-examination:</p> <input type="checkbox" class="form-check-input">
-                    <p style="color:#525252;">Re-examination day:</p><input type="date">
-                </div>
-
-            </th>
-        </tr>
-        <tr>
-            <th>Medicine Name</th>
-            <th>Using/day</th>
-            <th>Using/times</th>
-            <th>Method</th>
-        </tr>
-    </thead>
-    <tbody style="height: 170px;">
-        <tr>
-            <td>alo12345</td>
-            <td>alo</td>
-            <td>alo</td>
-            <td>alo1234</td>
-        </tr>
-    </tbody>
-    <tfoot>
-    <th colspan="4" style="text-align:right;">Total:</th>
-    </tfoot>
-</table>
-<table class="table table-bordered border-secondary">
-    <thead>
-        <tr>
-            <th colspan="4">
-                <div class="d-flex justify-content-between">
-                    <form action="">
-                        <input type="text" placeholder="Find Medicine" class="form-control" style="width:85%;height:40px;">
-                        <button class="btn btn-warning" style="height:40px; color:#fff;" data-bind="click : addMedicine">Add Medicine</button>
-                    </form>
-                </div>
-
-            </th>
-        </tr>
-        <tr>
-            <th>Amount</th>
-            <th>Medicine Name</th>
-            <th>Type</th>
-            <th>Method</th>
-        </tr>
-    </thead>
-    <tbody style="height:200px;" data-bind="foreach: medicines">
-        <tr>
-            <th><span data-bind="text: $data.medicinename"></span> alo</th>
-            <th>alo</th>
-            <th>alo</th>
-            <th><span data-bind="text: $data.method"></span> alo</th>
-        </tr>
-    </tbody>
-</table>
-            </form>
+            <thead class="table-danger">
+                <tr>
+                    <th>
+                        <h5 style="color:#525252">Previous prescription</h5>
+                    </th>
+                </tr>
+            </thead>
+            <!-- chỗ này cần sroll box -->
+            <tbody style="height:200px;">
+                <tr>
+                    <td><a href="" style="text-decoration:none;">List các toa thuốc cũ của bệnh nhân</a></td>
+                </tr>
+             
+            </tbody>
+        </table>
+        <div style="align-items:center; flex-direction: column; justify-content: space-around; display: flex;">
+            <button class="btn btn-success" style="margin-bottom:20px;">Save and Print</button>
+            <button class="btn btn-warning" style="color:#fff;">Create a new Presciption</button>
         </div>
     </div>
-   @* <h2>Medicine Table</h2>
+    <div class="col-md-10">
+        <form action="">
+            <table class="table table-bordered border-secondary">
+                <thead>
+                    <tr class="table-danger">
+                        <th>
+                            <h5 style="color:#525252">Patient Infomation</h5>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <div class="container">
+                            <td class="d-flex justify-content-between">
+                                Full Name: <input asp-for="Account.FullName" type="text" class="form-control"
+                                    style="width:500px;">
+                                DoB: <input asp-for="Account.Birthday" type="date" class="form-control"
+                                    style="width:200px;">
+                                Gender: <select name="gender" id="">
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                            </td>
+                        </div>
+                        <div class="container">
+                            <td class="d-flex justify-content-between">
+                                Address: <input asp-for="Account.Address" type="text" class="form-control"
+                                    style="width:300px;">
+                                City: <input asp-for="Account.Address" type="text" class="form-control"
+                                    style="width:200px;">
+                                Phone Number: <input asp-for="Account.PhoneNumber" type="text" class="form-control"
+                                    style="width:200px;">
+
+                            </td>
+                        </div>
+                        <div class="container ">
+                            <td class="d-flex justify-content-between">
+                                Pulse: <input type="number" placeholder="bpm" class="form-control" style="width:80px;">
+                                Blood Pressure: <input type="number" placeholder="mmHg" class="form-control"
+                                    style="width:100px;">
+                                Temperature: <input type="number" placeholder="°C" class="form-control"
+                                    style="width:80px;">
+                                Weight: <input type="number" placeholder="Kg" class="form-control" style="width:80px;">
+                                Height: <input type="number" placeholder="Cm" class="form-control" style="width:80px;">
+                            </td>
+                        </div>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered border-secondary">
+                <thead>
+                    <tr>
+                        <th colspan="4" class="table-danger">
+                            <div class="d-flex justify-content-between">
+                                <p style="color:#525252;">Medicine List And Using</p>
+                                <button class="btn btn-success">Clear Presciption</button>
+                                <p style="color:#525252;">Using Day:</p><input type="number" placeholder="Day"
+                                    class="form-control" style="width:80px;">
+                                <p style="color:#525252;">Re-examination:</p> <input type="checkbox"
+                                    class="form-check-input">
+                                <p style="color:#525252;">Re-examination day:</p><input type="date">
+                            </div>
+
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Using/day</th>
+                        <th>Using/times</th>
+                        <th>Method</th>
+                    </tr>
+                </thead>
+                <tbody style="height: 170px;">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <th colspan="4" style="text-align:right;">Total:</th>
+                </tfoot>
+            </table>
+            <table class="table table-bordered border-secondary">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            <div class="d-flex justify-content-between">
+                                <form action="">
+                                    <input type="text" placeholder="Find Medicine" class="form-control"
+                                        style="width:85%;height:40px;">
+                                    <button class="btn btn-warning" style="height:40px; color:#fff;"
+                                        data-bind="click : addMedicine">Add Medicine</button>
+                                </form>
+                            </div>
+
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Medicine Name</th>
+                        <th>Type</th>
+                        <th>Method</th>
+                    </tr>
+                </thead>
+                <tbody style="height:200px;">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+@* <h2>Medicine Table</h2>
     <button data-bind="click : addMedicine">Add Medicine</button>
     <ul data-bind="foreach: medicines">
-        <li>
-            <span data-bind="text: $data.medicinename"></span>
-            <span data-bind="text: $data.method"></span>
-            <button data-bind="click: remove">Remove</button>
-        </li>
+    <li>
+    <span data-bind="text: $data.medicinename"></span>
+    <span data-bind="text: $data.method"></span>
+    <button data-bind="click: remove">Remove</button>
+    </li>
     </ul>
 *@
-<script>
+@*<script>
     function medicine(medicinename,method){
-        return{
-            medicinename: ko.observable(medicinename),
-            method : ko.observable(method),
-            remove: function(){
-                medicinetable.medicines.remove(this)
-            }
-        };
+    return{
+    medicinename: ko.observable(medicinename),
+    method : ko.observable(method),
+    remove: function(){
+    medicinetable.medicines.remove(this)
     }
-    
+    };
+    }
+
     var medicinetable ={
-        medicines: ko.observableArray([new medicine("Panadol","Uong"), new medicine("Decolgen","Hit")]),
-            addMedicine: function () {
-            this.medicines.push(new medicine("new thuoc", "new method"));
-        }
+    medicines: ko.observableArray([new medicine("Panadol","Uong"), new medicine("Decolgen","Hit")]),
+    addMedicine: function () {
+    this.medicines.push(new medicine("new thuoc", "new method"));
+    }
     }
 
     ko.applyBindings(medicinetable);
-</script>
+    </script>*@

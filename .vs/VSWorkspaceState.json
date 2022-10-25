@@ -7,8 +7,9 @@
     "\\WebClient\\Controllers",
     "\\WebClient\\Views",
     "\\WebClient\\Views\\MedicalExam",
+    "\\WebClient\\Views\\ReceivePatient",
     "\\WebClient\\Views\\Shared"
   ],
-  "SelectedNode": "\\WebClient\\Views\\MedicalExam\\Index.cshtml",
+  "SelectedNode": "\\WebClient\\Views\\ReceivePatient\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

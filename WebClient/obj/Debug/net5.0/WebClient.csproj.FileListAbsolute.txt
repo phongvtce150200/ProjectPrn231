@@ -396,3 +396,5 @@ G:\PRN231\GITHUB\ProjectPrn231\WebClient\bin\Debug\net5.0\tr\Microsoft.CodeAnaly
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\WebClient.MvcApplicationPartsAssemblyInfo.cs
+G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\Shared\SideBar.cshtml.g.cs
+G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\Shared\Header.cshtml.g.cs

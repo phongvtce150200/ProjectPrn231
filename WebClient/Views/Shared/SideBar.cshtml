@@ -1,0 +1,28 @@
+﻿<input type="checkbox" id="nav-toggle">
+<div class="sidebar">
+    <div class="sidebar-brand">
+        <a href=""><img src="./img/VTP2 1.svg" alt="Logo" width="100%"></a>
+    </div>
+    <div class="sidebar-menu" id="sidebar">
+        <ul id="main-nav">
+            <li class="@ViewBag.DashBoard">
+                <a asp-action="Index" asp-controller="DoctorPage" class="link-active" id="dashBoard"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
+            </li>
+            <li class="@ViewBag.MedicalExam">
+                <a asp-action="Index" asp-controller="MedicalExam" class="link-active" id="medicalExam"><i class="fa-solid fa-stethoscope"></i><span>Medical Exam</span></a>
+            </li>
+            <li class="@ViewBag.Appointment">
+                <a asp-action="Index" asp-controller="Appointment" class="link-active" id="appoitment"><i class="fa-solid fa-calendar-check"></i><span>Appointment</span></a>
+            </li>
+            <li class="@ViewBag.ReceivePatient">
+                <a asp-action="Index" asp-controller="ReceivePatient" class="link-active" id="receivePatient"><i class="fa-solid fa-hand-holding-medical"></i><span>Recieve Patient</span></a>
+            </li>
+            <li class="@ViewBag.MedicineManage">
+                <a asp-action="Index" asp-controller="Medicine" class="link-active" id="medicineManage"><i class="fa-solid fa-capsules"></i><span>Medicine Manage</span></a>
+            </li>
+            <li class="@ViewBag.PatientManage">
+                <a asp-action="Index" asp-controller="Patient" class="link-active" id="patientManage"><i class="fa-solid fa-bed-pulse"></i><span>Patient Manage</span></a>
+            </li>
+        </ul>
+    </div>
+</div>

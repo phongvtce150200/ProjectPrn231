@@ -19,63 +19,9 @@
     <title>Admin Page</title>
 </head>
 <body>
-    <input type="checkbox" id="nav-toggle">
-    <div class="sidebar">
-        <div class="sidebar-brand">
-            <a href=""><img src="./img/VTP2 1.svg" alt="Logo" width="100%"></a>
-        </div>
-        <div class="sidebar-menu" id="sidebar">
-            <ul id="main-nav">
-                <li class="@ViewBag.DashBoard">
-                    <a asp-action="Index" asp-controller="DoctorPage" class="link-active" id="dashBoard"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
-                </li>
-                <li class="@ViewBag.MedicalExam">
-                    <a asp-action="Index" asp-controller="MedicalExam" class="link-active" id="medicalExam"><i class="fa-solid fa-stethoscope"></i><span>Medical Exam</span></a>
-                </li>
-                <li class="@ViewBag.Appointment">
-                    <a asp-action="Index" asp-controller="Appointment" class="link-active" id="appoitment"><i class="fa-solid fa-calendar-check"></i><span>Appointment</span></a>
-                </li>
-                <li class="@ViewBag.ReceivePatient">
-                    <a asp-action="Index" asp-controller="ReceivePatient" class="link-active" id="receivePatient"><i class="fa-solid fa-hand-holding-medical"></i><span>Recieve Patient</span></a>
-                </li>
-                <li class="@ViewBag.MedicineManage">
-                    <a asp-action="Index" asp-controller="Medicine" class="link-active" id="medicineManage"><i class="fa-solid fa-capsules"></i><span>Medicine Manage</span></a>
-                </li>
-                <li class="@ViewBag.PatientManage">
-                    <a asp-action="Index" asp-controller="Patient" class="link-active" id="patientManage"><i class="fa-solid fa-bed-pulse"></i><span>Patient Manage</span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    @await Html.PartialAsync("SideBar.cshtml")
     <div class="main-content">
-        <header>
-            <h2>
-                <label for="nav-toggle">
-                    <span><i class="fa-solid fa-bars"></i></span>
-                </label>
-            </h2>
-            <div class="user-wrapper">
-                <img src="./img/user.png" width="40px" height="40px" onclick="toggleMenu()">
-                <div onclick="toggleMenu()">
-                    <h5>Thanh Phong Vo</h5>
-                    <small>Doctor</small>
-                </div>
-                <div class="sub-menu-wrap" id="subMenu">
-                    <div class="sub-menu">
-                        <div class="user-info">
-                            <img src="./img/user.png" width="20px" height="20px">
-                            <p>Thanh Phong Vo<p>
-                        </div>
-                        <hr>
-                        <a href="" class="sub-menu-link">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                            <p>Logout</p>
-                            <span>></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
+        @await Html.PartialAsync("Header.cshtml")
         <main>
             @RenderBody()
             @RenderSection("Scripts",false)

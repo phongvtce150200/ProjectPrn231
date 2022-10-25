@@ -1,12 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
     Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
 }
+@model Patient
+<!-- KnockoutJs -->
+<script src="~/js/knockout-3.5.1.js"></script>
 <div class="container d-flex">
     <div class="col-md-2" style="margin-right:5px;">
-        <table class="table table-bordered border-secondary">
+        <table class="table table-bordered border-secondary" style="max-height:300px;">
             <thead class="table-danger">
                 <tr>
                     <th>
@@ -16,16 +16,15 @@
             </thead>
             <tr>
                 <th>
-                    <form action=""><input class="form-control" type="text" placeholder="Find Patient"
-                            style="text-align:center;"></form>
+                    <form action="">
+                        <input class="form-control" type="text" placeholder="Find Patient" style="text-align:center;">
+                    </form>
                 </th>
             </tr>
             <div>
                 <!-- chỗ này cần sroll box -->
-                <tbody style="height:300px; max-height:300px;">
-                    <tr>
-                        <td style="text-decoration: underline;">adam <hr></td>
-                    </tr>
+                <tbody style="text-align:center;" id="patientBody">
+
                 </tbody>
             </div>
         </table>
@@ -33,41 +32,51 @@
     <div class="col-md-10">
         <form action="">
             <table class="table table-bordered border-secondary">
-                <tr class="table-danger">
-                    <th>
-                        <h5 style="color:#525252">Patient Infomation</h5>
-                    </th>
-                </tr>
-                <tr>
-                    <div>
-                        <td class="container d-flex justify-content-between">
-                            Full Name: <input type="text" class="form-control" style="width:500px;">
-                            DoB: <input type="date" class="form-control" style="width:200px;">
-                            Gender: <select name="gender" id="">
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
-                            </select>
-                        </td>
-                    </div>
-                    <div>
-                        <td class="container d-flex justify-content-between">
-                            Address: <input type="text" class="form-control" style="width:300px;">
-                            City: <input type="text" class="form-control" style="width:200px;">
-                            Phone Number: <input type="text" class="form-control" style="width:200px;">
+                <thead>
+                    <tr class="table-danger">
+                        <th>
+                            <h5 style="color:#525252">Patient Infomation</h5>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <div class="container">
+                            <td class="d-flex justify-content-between">
+                                Full Name: <input asp-for="Account.FullName" type="text" class="form-control"
+                                    style="width:500px;">
+                                DoB: <input asp-for="Account.Birthday" type="date" class="form-control"
+                                    style="width:200px;">
+                                Gender: <select name="gender" id="">
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                            </td>
+                        </div>
+                        <div class="container">
+                            <td class="d-flex justify-content-between">
+                                Address: <input asp-for="Account.Address" type="text" class="form-control"
+                                    style="width:300px;">
+                                City: <input asp-for="Account.Address" type="text" class="form-control"
+                                    style="width:200px;">
+                                Phone Number: <input asp-for="Account.PhoneNumber" type="text" class="form-control"
+                                    style="width:200px;">
 
-                        </td>
-                    </div>
-                    <div>
-                        <td class="container d-flex" style="justify-content:space-between;">
-                            Pulse: <input type="number" placeholder="bpm" class="form-control" style="width:80px;">
-                            Blood Pressure: <input type="number" placeholder="mmHg" class="form-control"
-                                style="width:100px;">
-                            Temperature: <input type="number" placeholder="°C" class="form-control" style="width:80px;">
-                            Weight: <input type="number" placeholder="Kg" class="form-control" style="width:80px;">
-                            Height: <input type="number" placeholder="Cm" class="form-control" style="width:80px;">
-                        </td>
-                    </div>
-                </tr>
+                            </td>
+                        </div>
+                        <div class="container ">
+                            <td class="d-flex justify-content-between">
+                                Pulse: <input type="number" placeholder="bpm" class="form-control" style="width:80px;">
+                                Blood Pressure: <input type="number" placeholder="mmHg" class="form-control"
+                                    style="width:100px;">
+                                Temperature: <input type="number" placeholder="°C" class="form-control"
+                                    style="width:80px;">
+                                Weight: <input type="number" placeholder="Kg" class="form-control" style="width:80px;">
+                                Height: <input type="number" placeholder="Cm" class="form-control" style="width:80px;">
+                            </td>
+                        </div>
+                    </tr>
+                </tbody>
             </table>
         </form>
         <div class="container d-flex">
@@ -103,7 +112,8 @@
                             <th class="table-danger">
                                 <div class="d-flex justify-content-between">
                                     <p>Print queue ticket</p>
-                                    <a href="" style="text-decoration:none; color:black;"><i class="fa-solid fa-print"></i></a>
+                                    <a href="" style="text-decoration:none; color:black;"><i
+                                            class="fa-solid fa-print"></i></a>
                                 </div>
                             </th>
                         </tr>
@@ -118,3 +128,31 @@
         </div>
     </div>
 </div>
+<script>
+    LoadPatient();
+    function LoadPatient() {
+        var tr = ``;
+        $.ajax({
+            url: "@Url.Action("GetAllPatient")",
+            type: 'GET',
+            dataType: 'json', // added data type
+            success: (result) => {
+                $.each(result, (k, v) => {
+                    tr +=
+                        `<tr>
+                        <td>
+                                            <button id="patientfinding" value="${v.PatientId}"> ${v.Account.FullName} </button>
+                            </td>
+                    </tr>`
+                })
+                $("#patientBody").html(tr);
+            },
+            error: (error) => {
+                console.log(error)
+            }
+        });
+    };
+    //$(document).ready(function () {
+
+    //}
+</script>

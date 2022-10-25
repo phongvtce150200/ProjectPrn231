@@ -19,7 +19,7 @@ namespace DataAccess
                 using (var context = new ApplicationDbContext())
                 {
                     //listInvoice = context.invoices.Include(x => x.Test).Include(y => y.Test.Appointment).ToList();
-                    listPatient = context.patients.ToList();
+                    listPatient = context.patients.Include(x => x.Account).ToList();
                     if (listPatient.Count == 0)
                     {
                         return null;
@@ -40,7 +40,7 @@ namespace DataAccess
             {
                 using (var context = new ApplicationDbContext())
                 {
-                    p = context.patients.SingleOrDefault(x => x.PatientId == patId);
+                    p = context.patients.Include(x => x.Account).SingleOrDefault(y => y.PatientId == patId);
                 }
             }
             catch (Exception e)
