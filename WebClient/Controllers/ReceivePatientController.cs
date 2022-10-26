@@ -50,22 +50,5 @@ namespace WebClient.Controllers
             string jsons = JsonConvert.SerializeObject(list, jss);
             return Content(jsons, "application/json");
         }
-
-      /*  public async Task<IActionResult> GetPatientById(int id)
-        {
-            //FE active
-            string active = "active";
-            ViewBag.ReceivePatient = active;
-
-            //Get All Patient by Name
-            HttpResponseMessage respone = await client.GetAsync(PatientUrl + "/" + id);
-            if (respone.IsSuccessStatusCode)
-            {
-                var data = respone.Content.ReadAsStringAsync().Result;
-                Patient patient = JsonSerializer.Deserialize<Patient>(data);
-                return PartialView(patient);
-            }
-            return NotFound();
-        }*/
     }
 }

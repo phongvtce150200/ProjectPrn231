@@ -7,26 +7,30 @@
 <div class="container d-flex">
     <div class="col-md-2" style="margin-right:5px;">
         <table class="table table-bordered border-secondary" style="max-height:300px;">
-            <thead class="table-danger">
+            <thead>
                 <tr>
-                    <th>
+                    <th class="table-danger">
                         <h5 style="color:#525252;">Search</h5>
                     </th>
+
+                </tr>
+                <tr>
+                    <th>
+                        <form action="">
+                            <input class="form-control" type="text" placeholder="Find Patient"
+                                style="text-align:center;">
+                        </form>
+                    </th>
+
                 </tr>
             </thead>
-            <tr>
-                <th>
-                    <form action="">
-                        <input class="form-control" type="text" placeholder="Find Patient" style="text-align:center;">
-                    </form>
-                </th>
-            </tr>
-            <div>
-                <!-- chỗ này cần sroll box -->
-                <tbody style="text-align:center;" id="patientBody">
 
-                </tbody>
-            </div>
+
+            <!-- chỗ này cần sroll box -->
+            <tbody style="text-align:center;" id="patientBody">
+
+            </tbody>
+
         </table>
     </div>
     <div class="col-md-10">
@@ -41,40 +45,35 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <div class="container">
-                            <td class="d-flex justify-content-between">
-                                Full Name: <input asp-for="Account.FullName" type="text" class="form-control"
-                                    style="width:500px;">
-                                DoB: <input asp-for="Account.Birthday" type="date" class="form-control"
-                                    style="width:200px;">
-                                Gender: <select name="gender" id="">
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
-                                </select>
-                            </td>
-                        </div>
-                        <div class="container">
-                            <td class="d-flex justify-content-between">
-                                Address: <input asp-for="Account.Address" type="text" class="form-control"
-                                    style="width:300px;">
-                                City: <input asp-for="Account.Address" type="text" class="form-control"
-                                    style="width:200px;">
-                                Phone Number: <input asp-for="Account.PhoneNumber" type="text" class="form-control"
-                                    style="width:200px;">
+                        <td class="d-flex justify-content-between">
+                            Full Name: <input asp-for="Account.FullName" type="text" class="form-control"
+                                style="width:500px;" readonly />
+                            DoB: <input asp-for="Account.Birthday" type="text" class="form-control"
+                                        style="width:200px;" readonly />
+                            Gender: <input type="text" asp-for="Account.Gender" class="form-control" style="width:80px" readonly />
+                        </td>
 
-                            </td>
-                        </div>
-                        <div class="container ">
-                            <td class="d-flex justify-content-between">
-                                Pulse: <input type="number" placeholder="bpm" class="form-control" style="width:80px;">
-                                Blood Pressure: <input type="number" placeholder="mmHg" class="form-control"
-                                    style="width:100px;">
-                                Temperature: <input type="number" placeholder="°C" class="form-control"
-                                    style="width:80px;">
-                                Weight: <input type="number" placeholder="Kg" class="form-control" style="width:80px;">
-                                Height: <input type="number" placeholder="Cm" class="form-control" style="width:80px;">
-                            </td>
-                        </div>
+
+                        <td class="d-flex justify-content-between">
+                            Address: <input asp-for="Account.Address" type="text" class="form-control"
+                                            style="width:300px;" readonly />
+                            City: <input type="text" class="form-control"
+                                         style="width:200px;" readonly />
+                            Phone Number: <input asp-for="Account.PhoneNumber" type="text" class="form-control"
+                                                 style="width:200px;" readonly />
+
+                        </td>
+
+
+                        <td class="d-flex justify-content-between">
+                            Pulse: <input type="number" placeholder="bpm" class="form-control" style="width:80px;">
+                            Blood Pressure: <input type="number" placeholder="mmHg" class="form-control"
+                                style="width:100px;">
+                            Temperature: <input type="number" placeholder="°C" class="form-control" style="width:80px;">
+                            Weight: <input type="number" placeholder="Kg" class="form-control" style="width:80px;">
+                            Height: <input type="number" placeholder="Cm" class="form-control" style="width:80px;">
+                        </td>
+
                     </tr>
                 </tbody>
             </table>
@@ -128,8 +127,10 @@
         </div>
     </div>
 </div>
+@section Scripts{
 <script>
     LoadPatient();
+    var patientList = [];
     function LoadPatient() {
         var tr = ``;
         $.ajax({
@@ -137,13 +138,14 @@
             type: 'GET',
             dataType: 'json', // added data type
             success: (result) => {
+                patientList = result
                 $.each(result, (k, v) => {
                     tr +=
                         `<tr>
-                        <td>
-                                            <button id="patientfinding" value="${v.PatientId}"> ${v.Account.FullName} </button>
-                            </td>
-                    </tr>`
+                                <td>
+                                     <span onclick="handlePatient(this)"  data-patient="https://localhost:5001/api/Patient/${v.PatientId}" name="patient" id="patient"> ${v.Account.FullName} </span>
+                                </td>
+                            </tr>`
                 })
                 $("#patientBody").html(tr);
             },
@@ -151,8 +153,43 @@
                 console.log(error)
             }
         });
+        handlePatient();
     };
-    //$(document).ready(function () {
+    function fillData(id) {
+        let data = patientList.filter(x => x.PatientId == id)
+        console.log(data)
 
-    //}
+    };
+
+    function handlePatient(element){
+            const fullname = document.querySelector("#Account_FullName");
+            const birthday = document.querySelector("#Account_Birthday");
+            const gender = document.querySelector("#Account_Gender");
+            const address = document.querySelector("#Account_Address");
+            const url = element?.dataset.patient;
+            $.ajax({
+                url,
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: (result) => {
+                    console.log(result);
+                    fullname.value = result.Account.FullName;
+                    birthday.value = result.Account.Birhtday;
+                    gender.value = result.Account.Gender;
+                    address.value = result.Account.Address;
+                },
+                error: (error) => {
+                    console.log(error)
+                }
+            });
+            
+            //$('#patientBody #patient').click(function (e) {
+               // e.preventDefault();
+               // let id = e.target.value;
+              //  fillData(id);
+           // });
+    }
+
+
 </script>
+}

@@ -1,15 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BusinessObject",
     "\\ClinicApi",
-    "\\WebClient",
-    "\\WebClient\\Controllers",
-    "\\WebClient\\Views",
-    "\\WebClient\\Views\\MedicalExam",
-    "\\WebClient\\Views\\ReceivePatient",
-    "\\WebClient\\Views\\Shared"
+    "\\ClinicApi\\Controllers"
   ],
-  "SelectedNode": "\\WebClient\\Views\\ReceivePatient\\Index.cshtml",
+  "SelectedNode": "\\PRN231_Project.sln",
   "PreviewInSolutionExplorer": false
 }
