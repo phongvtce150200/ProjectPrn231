@@ -1,31 +1,30 @@
-﻿@model Patient
-@{
+﻿@{
     Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
 }
 <div class="container d-flex">
     <div class="col-md-2" style="margin-right:5px;">
-        <table class="table table-bordered border-secondary">
-            <thead class="table-danger">
+        <table class="table table-bordered border-secondary" style="max-height:300px;">
+            <thead>
+                <tr>
+                    <th class="table-danger">
+                        <h5 style="color:#525252;">Queue</h5>
+                    </th>
+
+                </tr>
                 <tr>
                     <th>
-                        <h5 style="color:#525252;">Search</h5>
+                        <form action="">
+                            <input class="form-control" type="text" placeholder="Find Patient"
+                                   style="text-align:center;">
+                        </form>
                     </th>
+
                 </tr>
             </thead>
-            <div>
-                <!-- chỗ này cần sroll box -->
-                <tbody>
-                    <tr>
-                        <td>
-                            <form action=""><input class="form-control" type="text" placeholder="Find Patient"
-                                    style="text-align:center;"></form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-decoration: underline;">đã xử lý được ở receive</td>
-                    </tr>
-                </tbody>
-            </div>
+            <!-- chỗ này cần sroll box -->
+            <tbody style="text-align:center;" id="patientBody">
+            </tbody>
+
         </table>
         <table class="table table-bordered border-secondary">
             <thead class="table-danger">
@@ -40,7 +39,7 @@
                 <tr>
                     <td><a href="" style="text-decoration:none;">List các toa thuốc cũ của bệnh nhân</a></td>
                 </tr>
-             
+
             </tbody>
         </table>
         <div style="align-items:center; flex-direction: column; justify-content: space-around; display: flex;">
@@ -60,40 +59,30 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <div class="container">
-                            <td class="d-flex justify-content-between">
-                                Full Name: <input asp-for="Account.FullName" type="text" class="form-control"
-                                    style="width:500px;">
-                                DoB: <input asp-for="Account.Birthday" type="date" class="form-control"
-                                    style="width:200px;">
-                                Gender: <select name="gender" id="">
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
-                                </select>
-                            </td>
-                        </div>
-                        <div class="container">
-                            <td class="d-flex justify-content-between">
-                                Address: <input asp-for="Account.Address" type="text" class="form-control"
-                                    style="width:300px;">
-                                City: <input asp-for="Account.Address" type="text" class="form-control"
-                                    style="width:200px;">
-                                Phone Number: <input asp-for="Account.PhoneNumber" type="text" class="form-control"
-                                    style="width:200px;">
+                        <td class="d-flex justify-content-between">
+                            Full Name: <input name="FullName" id="Account_FullName" type="text" class="form-control"
+                                              style="width:500px;" readonly />
+                            DoB: <input name="Birthday" id="Account_Birthday" type="text" class="form-control"
+                                        style="width:200px;" readonly />
+                            Gender: <input type="text" name="Gender" id="Account_Gender" class="form-control" style="width:80px" readonly />
+                        </td>
+                        <td class="d-flex justify-content-between">
+                            Address: <input name="Address" id="Account_Address" type="text" class="form-control"
+                                            style="width:300px;" readonly />
+                            City: <input type="text" class="form-control"
+                                         style="width:200px;" readonly />
+                            Phone Number: <input name="PhoneNumber" id="Account_PhoneNumber" type="text" class="form-control"
+                                                 style="width:200px;" readonly />
 
-                            </td>
-                        </div>
-                        <div class="container ">
-                            <td class="d-flex justify-content-between">
-                                Pulse: <input type="number" placeholder="bpm" class="form-control" style="width:80px;">
-                                Blood Pressure: <input type="number" placeholder="mmHg" class="form-control"
-                                    style="width:100px;">
-                                Temperature: <input type="number" placeholder="°C" class="form-control"
-                                    style="width:80px;">
-                                Weight: <input type="number" placeholder="Kg" class="form-control" style="width:80px;">
-                                Height: <input type="number" placeholder="Cm" class="form-control" style="width:80px;">
-                            </td>
-                        </div>
+                        </td>
+                        <td class="d-flex justify-content-between">
+                            Pulse: <input type="number" name="Pulse" id="Pulse" placeholder="bpm" class="form-control" style="width:80px;" readonly>
+                            Blood Pressure: <input type="number" name="BloodPressure" id="BloodPressure" placeholder="mmHg" class="form-control"
+                                                   style="width:100px;" readonly>
+                            Temperature: <input type="number" name="Temperature" id="Temperature" placeholder="°C" class="form-control" style="width:80px;" readonly>
+                            Weight: <input type="number" name="Weight" id="Weight" placeholder="Kg" class="form-control" style="width:80px;" readonly>
+                            Height: <input type="number" name="Height" id="Height" placeholder="Cm" class="form-control" style="width:80px;" readonly>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -105,9 +94,9 @@
                                 <p style="color:#525252;">Medicine List And Using</p>
                                 <button class="btn btn-success">Clear Presciption</button>
                                 <p style="color:#525252;">Using Day:</p><input type="number" placeholder="Day"
-                                    class="form-control" style="width:80px;">
+                                                                               class="form-control" style="width:80px;">
                                 <p style="color:#525252;">Re-examination:</p> <input type="checkbox"
-                                    class="form-check-input">
+                                                                                     class="form-check-input">
                                 <p style="color:#525252;">Re-examination day:</p><input type="date">
                             </div>
 
@@ -129,7 +118,9 @@
                     </tr>
                 </tbody>
                 <tfoot>
-                    <th colspan="4" style="text-align:right;">Total:</th>
+                    <tr>
+                        <td colspan="4" style="text-align:right;">Total:</td>
+                    </tr>             
                 </tfoot>
             </table>
             <table class="table table-bordered border-secondary">
@@ -139,9 +130,11 @@
                             <div class="d-flex justify-content-between">
                                 <form action="">
                                     <input type="text" placeholder="Find Medicine" class="form-control"
-                                        style="width:85%;height:40px;">
+                                           style="width:85%;height:40px;">
                                     <button class="btn btn-warning" style="height:40px; color:#fff;"
-                                        data-bind="click : addMedicine">Add Medicine</button>
+                                            data-bind="click : addMedicine">
+                                        Add Medicine
+                                    </button>
                                 </form>
                             </div>
 
@@ -166,33 +159,79 @@
         </form>
     </div>
 </div>
-@* <h2>Medicine Table</h2>
-    <button data-bind="click : addMedicine">Add Medicine</button>
-    <ul data-bind="foreach: medicines">
-    <li>
-    <span data-bind="text: $data.medicinename"></span>
-    <span data-bind="text: $data.method"></span>
-    <button data-bind="click: remove">Remove</button>
-    </li>
-    </ul>
-*@
-@*<script>
-    function medicine(medicinename,method){
-    return{
-    medicinename: ko.observable(medicinename),
-    method : ko.observable(method),
-    remove: function(){
-    medicinetable.medicines.remove(this)
-    }
-    };
-    }
 
-    var medicinetable ={
-    medicines: ko.observableArray([new medicine("Panadol","Uong"), new medicine("Decolgen","Hit")]),
-    addMedicine: function () {
-    this.medicines.push(new medicine("new thuoc", "new method"));
-    }
-    }
+<!-- SignalR -->
+<script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
+@section Scripts{
+    <script>
+        LoadPatient();
+        var patientList = [];
+        var connection = new signalR.HubConnectionBuilder().withUrl("/SignalRServer").build();
+        connection.start();
+        connection.on("LoadPatients", function () {
+            LoadPatient();
+        });
 
-    ko.applyBindings(medicinetable);
-    </script>*@
+
+        function LoadPatient() {
+            var tr = ``;
+            $.ajax({
+                url: "https://localhost:5008/api/Queue?docID=1",
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: (result) => {
+                    patientList = result
+                    $.each(result, (k, v) => {
+                        tr +=
+                            `<tr>
+                                                                                        <td>
+                                                                                                     <span onclick="handlePatient(this)"  data-patient="https://localhost:5001/api/Patient/${v.patientId}" name="patient" id="patient"> ${v.patientFullName} </span>
+                                                                                        </td>
+                                                                                    </tr>`
+                    })
+                    $("#patientBody").html(tr);
+                },
+                error: (error) => {
+                    console.log(error)
+                }
+            });
+            handlePatient();
+        };
+        function fillData(id) {
+            let data = patientList.filter(x => x.PatientId == id)
+            console.log(data)
+
+        };
+
+        function handlePatient(element) {
+            const fullname = document.querySelector("#Account_FullName");
+            const birthday = document.querySelector("#Account_Birthday");
+            const gender = document.querySelector("#Account_Gender");
+            const address = document.querySelector("#Account_Address");
+            const phoneNumber = document.querySelector("#Account_PhoneNumber");
+            const pulse = document.querySelector("#Pulse");
+            const bloodPressure = document.querySelector("#BloodPressure");
+            const temperature = document.querySelector("#Temperature");
+            const weight = document.querySelector("#Weight");
+            const height = document.querySelector("#Height");
+            const url = element?.dataset.patient;
+            $.ajax({
+                url,
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: (result) => {
+                    console.log(result);
+                    fullname.value = result.Account.FullName;
+                    birthday.value = result.Account.Birhtday;
+                    gender.value = result.Account.Gender;
+                    address.value = result.Account.Address;
+                    phoneNumber.value = result.Account.PhoneNumber;
+                },
+                error: (error) => {
+                    console.log(error)
+                }
+            });
+        };
+
+    </script>
+}

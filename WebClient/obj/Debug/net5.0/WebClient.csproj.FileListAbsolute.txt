@@ -398,3 +398,4 @@ G:\PRN231\GITHUB\ProjectPrn231\WebClient\bin\Debug\net5.0\zh-Hant\Microsoft.Code
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\WebClient.MvcApplicationPartsAssemblyInfo.cs
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\Shared\SideBar.cshtml.g.cs
 G:\PRN231\GITHUB\ProjectPrn231\WebClient\obj\Debug\net5.0\Razor\Views\Shared\Header.cshtml.g.cs
+G:\PRN231\GITHUB\ProjectPrn231\WebClient\bin\Debug\net5.0\libman.json

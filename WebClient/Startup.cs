@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebClient.Hubs;
 
 namespace WebClient
 {
@@ -26,10 +27,15 @@ namespace WebClient
             IMvcBuilder builder = services.AddControllersWithViews();
 
             var enviroment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIROMENT");
-            if(enviroment == null)
+            services.AddSignalR();
+            if (enviroment == null)
             {
                 builder.AddRazorRuntimeCompilation();
             }
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+            });
 
         }
 
@@ -58,6 +64,7 @@ namespace WebClient
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<SignalRServer>("/SignalRServer");
             });
         }
     }

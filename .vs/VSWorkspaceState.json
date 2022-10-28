@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\ClinicApi",
-    "\\ClinicApi\\Controllers"
+    "\\ClinicApi\\Controllers",
+    "\\WebClient"
   ],
-  "SelectedNode": "\\PRN231_Project.sln",
+  "SelectedNode": "\\WebClient\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }
