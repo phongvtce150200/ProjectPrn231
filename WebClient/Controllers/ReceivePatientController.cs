@@ -89,7 +89,7 @@ namespace WebClient.Controllers
                 if (respone.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     await _signalRServer.Clients.All.SendAsync("LoadPatients");
-                    return View("Index");
+                    return RedirectToAction("Index","ReceivePatient");
                 }
                 return BadRequest(respone);
             }

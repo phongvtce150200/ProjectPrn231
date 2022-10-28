@@ -184,54 +184,51 @@
                     $.each(result, (k, v) => {
                         tr +=
                             `<tr>
-                                                                                        <td>
-                                                                                                     <span onclick="handlePatient(this)"  data-patient="https://localhost:5001/api/Patient/${v.patientId}" name="patient" id="patient"> ${v.patientFullName} </span>
-                                                                                        </td>
-                                                                                    </tr>`
+                                <td>
+                                    <button value="${k}" name="patient" style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;"> ${v.patientFullName} </button>
+                                </td>
+                            </tr>`
                     })
                     $("#patientBody").html(tr);
-                },
-                error: (error) => {
-                    console.log(error)
-                }
-            });
-            handlePatient();
-        };
-        function fillData(id) {
-            let data = patientList.filter(x => x.PatientId == id)
-            console.log(data)
-
-        };
-
-        function handlePatient(element) {
-            const fullname = document.querySelector("#Account_FullName");
-            const birthday = document.querySelector("#Account_Birthday");
-            const gender = document.querySelector("#Account_Gender");
-            const address = document.querySelector("#Account_Address");
-            const phoneNumber = document.querySelector("#Account_PhoneNumber");
-            const pulse = document.querySelector("#Pulse");
-            const bloodPressure = document.querySelector("#BloodPressure");
-            const temperature = document.querySelector("#Temperature");
-            const weight = document.querySelector("#Weight");
-            const height = document.querySelector("#Height");
-            const url = element?.dataset.patient;
-            $.ajax({
-                url,
-                type: 'GET',
-                dataType: 'json', // added data type
-                success: (result) => {
-                    console.log(result);
-                    fullname.value = result.Account.FullName;
-                    birthday.value = result.Account.Birhtday;
-                    gender.value = result.Account.Gender;
-                    address.value = result.Account.Address;
-                    phoneNumber.value = result.Account.PhoneNumber;
+                    assignClickEvent();
                 },
                 error: (error) => {
                     console.log(error)
                 }
             });
         };
+
+        function assignClickEvent(){
+            $("button[name='patient']").click((e) => {
+                let index =  e.currentTarget.value;
+                //console.log(index);
+                let item = patientList[index];
+                //console.log(item);
+                const patientFullName = document.querySelector("#Account_FullName");
+                const patientBirthDay = document.querySelector("#Account_Birthday");
+                const patientGender = document.querySelector("#Account_Gender");
+                const address = document.querySelector("#Account_Address");
+                const phoneNumber = document.querySelector("#Account_PhoneNumber");
+                const pulse = document.querySelector("#Pulse");
+                const bloodPressure = document.querySelector("#BloodPressure");
+                const temperature = document.querySelector("#Temperature");
+                const weight = document.querySelector("#Weight");
+                const height = document.querySelector("#Height");
+                patientFullName.value = item.patientFullName;
+                patientBirthDay.value = item.patientBirthDay;
+                patientGender.value = item.patientGender;
+                address.value = item.address;
+                phoneNumber.value = item.phoneNumber;
+                pulse.value = item.pusle;
+                bloodPressure.value = item.bloodPressure;
+                temperature.value = item.temperature;
+                weight.value = item.weight;
+                height.value = item.height;
+            })
+        }
+
+
+      
 
     </script>
 }

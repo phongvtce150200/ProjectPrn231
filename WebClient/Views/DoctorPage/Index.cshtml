@@ -1,6 +1,74 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
     Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
 }
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header">
+                Patient in 30 days
+            </div>
+            <div class="card-body">
+                <canvas class="my-4 h-25" id="bar1"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header">
+                Prescription in 30 days
+            </div>
+            <div class="card-body">
+                <canvas class="my-4 h-25" id="bar2"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script>
+    var chart = document.getElementById('bar1').getContext('2d');
+    var myChart = new Chart(chart, {
+        type: 'bar',
+        data: {
+            labels: ['001', '002', '003', '004'],
+            datasets: [{
+                label: 'Bar Chart',
+                data: [100, 200, 300, 150],
+                backgroundcolor: 'rgba(6,128,250)'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtzero: true
+                    }
+                }]
+            }
+        }
+    });
+    var chart2 = document.getElementById('bar2').getContext('2d');
+    var myChart2 = new Chart(chart2, {
+        type: 'bar',
+        data: {
+            labels: ['001', '002', '003', '004'],
+            datasets: [{
+                label: 'Bar Chart',
+                data: [100, 200, 300, 150],
+                backgroundcolor: 'rgba(6,128,250)'
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtzero: true
+                    }
+                }]
+            }
+        }
+    })
+</script>

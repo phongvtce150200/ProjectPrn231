@@ -3,8 +3,10 @@
     "",
     "\\ClinicApi",
     "\\ClinicApi\\Controllers",
-    "\\WebClient"
+    "\\WebClient",
+    "\\WebClient\\Views",
+    "\\WebClient\\Views\\MedicalExam"
   ],
-  "SelectedNode": "\\WebClient\\Startup.cs",
+  "SelectedNode": "\\WebClient\\Views\\MedicalExam\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
