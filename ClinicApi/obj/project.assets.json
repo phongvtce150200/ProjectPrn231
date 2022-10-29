@@ -8919,19 +8919,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vthan\\.nuget\\packages\\": {}
+    "C:\\Users\\namtr\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
+      "projectUniqueName": "D:\\FPTFinalProject\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
       "projectName": "ClinicApi",
-      "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
-      "packagesPath": "C:\\Users\\vthan\\.nuget\\packages\\",
-      "outputPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\ClinicApi\\obj\\",
+      "projectPath": "D:\\FPTFinalProject\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
+      "packagesPath": "C:\\Users\\namtr\\.nuget\\packages\\",
+      "outputPath": "D:\\FPTFinalProject\\ProjectPrn231\\ClinicApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\vthan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\namtr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8945,8 +8949,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj": {
-              "projectPath": "G:\\PRN231\\GITHUB\\ProjectPrn231\\Repository\\Repository.csproj"
+            "D:\\FPTFinalProject\\ProjectPrn231\\Repository\\Repository.csproj": {
+              "projectPath": "D:\\FPTFinalProject\\ProjectPrn231\\Repository\\Repository.csproj"
             }
           }
         }
@@ -9011,7 +9015,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
