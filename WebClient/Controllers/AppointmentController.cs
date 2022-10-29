@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
@@ -28,6 +29,10 @@ namespace WebClient.Controllers
         {
             string active = "active";
             ViewBag.Appointment = active;
+            string SessionFullname = HttpContext.Session.GetString("fullname");
+            ViewData["fullname"] = SessionFullname;
+            string SessionRole = HttpContext.Session.GetString("role");
+            ViewData["role"] = SessionRole;
             return View();
         }
         public async Task<IActionResult> GetEvents(int id = 1)

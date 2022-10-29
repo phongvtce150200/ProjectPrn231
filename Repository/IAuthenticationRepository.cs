@@ -1,4 +1,5 @@
-﻿using DataAccess.DTO;
+﻿using BusinessObject;
+using DataAccess.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace Repository
     {
         Task<string> Login(LoginDTO loginDTO);
         Task<bool> Register(RegisterDTO registerDTO);
+        UserandRole getUserBytoken(string token);
+        
     }
 }

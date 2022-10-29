@@ -50,15 +50,25 @@ namespace DataAccess
             return p;
         }
 
-        public static void CreatePatient(Patient p)
+        public static bool CreatePatient(Patient p)
         {
+            bool check = true;
             try
             {
                 using (var context = new ApplicationDbContext())
                 {
-                    context.patients.Add(p);
-                    context.SaveChanges();
+                    var checkDuplicated = context.patients.Find(p.PatientId);
+                    if (checkDuplicated == null)
+                    {
+                        context.patients.Add(p);
+                        context.SaveChanges();
+                    } else
+                    {
+                        check = false;
+                    }
+                    
                 }
+                return check;
             }
             catch (Exception e)
             {

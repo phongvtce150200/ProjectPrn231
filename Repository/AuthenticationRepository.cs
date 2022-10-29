@@ -1,4 +1,5 @@
-﻿using DataAccess;
+﻿using BusinessObject;
+using DataAccess;
 using DataAccess.DTO;
 using System;
 using System.Collections.Generic;
@@ -22,5 +23,8 @@ namespace Repository
 
 
         public Task<bool> Register(RegisterDTO registerDTO) => authenticationDAO.Register(registerDTO);
+
+        public UserandRole getUserBytoken(string token) => authenticationDAO.getUserBytoken(token);
+        
     }
 }

@@ -49,10 +49,10 @@ namespace ClinicApi.Controllers
 
         // POST api/<PatientController>
         [HttpPost]
-        public IActionResult CreatePatient(Patient p)
+        public bool CreatePatient(Patient p)
         {
-            _patientRepository.CreatePatient(p);
-            return Ok(p);
+            bool status = _patientRepository.CreatePatient(p);
+            return status;
         }
 
         // PUT api/<PatientController>/5
