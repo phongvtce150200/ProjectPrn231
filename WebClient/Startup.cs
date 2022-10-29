@@ -32,11 +32,18 @@ namespace WebClient
             {
                 builder.AddRazorRuntimeCompilation();
             }
+<<<<<<< HEAD
             services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
+=======
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromDays(3);
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
             });
 
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +63,7 @@ namespace WebClient
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 

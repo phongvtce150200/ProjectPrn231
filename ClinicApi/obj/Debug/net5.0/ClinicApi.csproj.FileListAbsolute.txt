@@ -623,6 +623,7 @@ G:\PRN231\GITHUB\ProjectPrn231\ClinicApi\obj\Debug\net5.0\ClinicApi.pdb
 G:\PRN231\GITHUB\ProjectPrn231\ClinicApi\obj\Debug\net5.0\ClinicApi.genruntimeconfig.cache
 G:\PRN231\GITHUB\ProjectPrn231\ClinicApi\obj\Debug\net5.0\ref\ClinicApi.dll
 G:\PRN231\GITHUB\ProjectPrn231\ClinicApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+<<<<<<< HEAD
 D:\FPTFinalProject\ProjectPrn231\ClinicApi\bin\Debug\net5.0\appsettings.Development.json
 D:\FPTFinalProject\ProjectPrn231\ClinicApi\bin\Debug\net5.0\appsettings.json
 D:\FPTFinalProject\ProjectPrn231\ClinicApi\bin\Debug\net5.0\ClinicApi.exe
@@ -780,3 +781,6 @@ D:\FPTFinalProject\ProjectPrn231\ClinicApi\obj\Debug\net5.0\refint\ClinicApi.dll
 D:\FPTFinalProject\ProjectPrn231\ClinicApi\obj\Debug\net5.0\ClinicApi.pdb
 D:\FPTFinalProject\ProjectPrn231\ClinicApi\obj\Debug\net5.0\ClinicApi.genruntimeconfig.cache
 D:\FPTFinalProject\ProjectPrn231\ClinicApi\obj\Debug\net5.0\ref\ClinicApi.dll
+=======
+F:\FPT\FA22\PRN231\Final_Project\ProjectPrn231\ClinicApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d

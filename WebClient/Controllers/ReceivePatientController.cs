@@ -8,9 +8,13 @@ using WebClient.Models;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using JsonSerializer = System.Text.Json.JsonSerializer;
+<<<<<<< HEAD
 using System;
 using Microsoft.AspNetCore.SignalR;
 using WebClient.Hubs;
+=======
+using Microsoft.AspNetCore.Http;
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
 
 namespace WebClient.Controllers
 {
@@ -34,7 +38,22 @@ namespace WebClient.Controllers
         {
             //FE active
             string active = "active";
+<<<<<<< HEAD
             ViewData["ReceivePatient"] = active;
+=======
+            ViewBag.ReceivePatient = active;
+            string SessionFullname = HttpContext.Session.GetString("fullname");
+            ViewData["fullname"] = SessionFullname;
+            string SessionRole = HttpContext.Session.GetString("role");
+            ViewData["role"] = SessionRole;
+            
+
+            if (!SessionRole.Equals("Nurse"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
 
             return View();
         }

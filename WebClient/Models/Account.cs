@@ -11,6 +11,7 @@ namespace WebClient.Models
         public string Email { get; set; }
         public Gender Gender { get; set; }
         public string PhoneNumber { get; set; }
+        public string Role { get; set; }
     }
     public enum Gender { 
         Male = 1,

@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\FPTFinalProject\\ProjectPrn231\\Repository\\Repository.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "D:\\FPTFinalProject\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\namtr\\.nuget\\packages\\",
         "outputPath": "D:\\FPTFinalProject\\ProjectPrn231\\BusinessObject\\obj\\",
+=======
+    "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\Repository\\Repository.csproj": {}
+  },
+  "projects": {
+    "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
+        "projectName": "BusinessObject",
+        "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\obj\\",
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\namtr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,8 +100,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -92,6 +109,7 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
@@ -104,12 +122,30 @@
         "projectPath": "D:\\FPTFinalProject\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\namtr\\.nuget\\packages\\",
         "outputPath": "D:\\FPTFinalProject\\ProjectPrn231\\DataAccess\\obj\\",
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\obj\\",
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\namtr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -123,8 +159,13 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< HEAD
               "D:\\FPTFinalProject\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "D:\\FPTFinalProject\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
+=======
+              "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
               }
             }
           }
@@ -150,8 +191,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -160,6 +200,7 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
@@ -172,12 +213,30 @@
         "projectPath": "D:\\FPTFinalProject\\ProjectPrn231\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\namtr\\.nuget\\packages\\",
         "outputPath": "D:\\FPTFinalProject\\ProjectPrn231\\Repository\\obj\\",
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\Repository\\Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\Repository\\Repository.csproj",
+        "projectName": "Repository",
+        "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\Repository\\obj\\",
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\namtr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -191,11 +250,19 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< HEAD
               "D:\\FPTFinalProject\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
                 "projectPath": "D:\\FPTFinalProject\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
               },
               "D:\\FPTFinalProject\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
                 "projectPath": "D:\\FPTFinalProject\\ProjectPrn231\\DataAccess\\DataAccess.csproj"
+=======
+              "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
+              },
+              "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "F:\\FPT\\FA22\\PRN231\\Final_Project\\ProjectPrn231\\DataAccess\\DataAccess.csproj"
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
               }
             }
           }
@@ -215,8 +282,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -225,7 +291,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d
         }
       }
     }

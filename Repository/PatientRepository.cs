@@ -14,7 +14,7 @@ namespace Repository
 
         public Patient GetPatientById(int id) => PatientDAO.FindPatientById(id);
 
-        public void CreatePatient(Patient p) => PatientDAO.CreatePatient(p);
+        public bool CreatePatient(Patient p) => PatientDAO.CreatePatient(p);
 
         public void UpdatePatient(Patient p) => PatientDAO.UpdatePatient(p);
 

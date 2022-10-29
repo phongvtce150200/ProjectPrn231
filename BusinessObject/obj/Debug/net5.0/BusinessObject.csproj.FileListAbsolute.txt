@@ -14,6 +14,7 @@ F:\FPT\FA22\PRN231\Final_Project\ProjectPrn231\BusinessObject\obj\Debug\net5.0\r
 F:\FPT\FA22\PRN231\Final_Project\ProjectPrn231\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
 F:\FPT\FA22\PRN231\Final_Project\ProjectPrn231\BusinessObject\obj\Debug\net5.0\BusinessObject.genruntimeconfig.cache
 F:\FPT\FA22\PRN231\Final_Project\ProjectPrn231\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll
+<<<<<<< HEAD
 G:\PRN231\GITHUB\ProjectPrn231\BusinessObject\bin\Debug\net5.0\appsettings.json
 G:\PRN231\GITHUB\ProjectPrn231\BusinessObject\bin\Debug\net5.0\BusinessObject.deps.json
 G:\PRN231\GITHUB\ProjectPrn231\BusinessObject\bin\Debug\net5.0\BusinessObject.runtimeconfig.json
@@ -46,3 +47,5 @@ D:\FPTFinalProject\ProjectPrn231\BusinessObject\obj\Debug\net5.0\refint\Business
 D:\FPTFinalProject\ProjectPrn231\BusinessObject\obj\Debug\net5.0\BusinessObject.pdb
 D:\FPTFinalProject\ProjectPrn231\BusinessObject\obj\Debug\net5.0\BusinessObject.genruntimeconfig.cache
 D:\FPTFinalProject\ProjectPrn231\BusinessObject\obj\Debug\net5.0\ref\BusinessObject.dll
+=======
+>>>>>>> b861c2ee55ceb8095871334999a19e84c3240e9d

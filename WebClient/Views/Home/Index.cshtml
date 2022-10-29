@@ -4,3 +4,24 @@
 @{
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
+@model Login
+<!-- form-right -->
+    
+    <div class="container" id="container">
+        <form class="form-right-login" id="loginForm" asp-action="Login" method="post">
+          <h2>Welcome User</h2>
+          <input type="text" asp-for="userName" placeholder="Email" />
+          <input type="password" asp-for="password" placeholder="Password" />
+          <a href="#">Forgot your password?</a>
+          <button class="confrim">Sign In</button>
+        </form> 
+        <form class="form-right-register" id="registerForm">
+            <h2>Register for more</h2>
+            <input type="text" placeholder="Username" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Confirm Password" />
+            <a href="#">Forgot your password?</a>
+            <button class="confrim">Register  </button>
+        </form>
+    </div>

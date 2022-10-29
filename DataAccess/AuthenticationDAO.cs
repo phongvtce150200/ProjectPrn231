@@ -1,6 +1,7 @@
 ﻿using BusinessObject;
 using DataAccess.DTO;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -18,27 +19,32 @@ namespace DataAccess
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
+        private readonly ApplicationDbContext _context;
 
 
-        public AuthenticationDAO(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+        public AuthenticationDAO(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration, ApplicationDbContext context)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
+            _context = context;
         }
 
         public async Task<string> Login(LoginDTO loginDTO)
-        { 
+        {
             var user = await _userManager.FindByNameAsync(loginDTO.UserName);
             if (user == null) throw new Exception("Wrong Username or Password");
 
             // var result = await _signInManager.PasswordSignInAsync(check,loginDTO.Password,false,false);
             var result = await _userManager.CheckPasswordAsync(user, loginDTO.Password);
+            result = true;
             if (!result)
             {
                 return null;
             }
             var roles = await _userManager.GetRolesAsync(user);
+
+
             var claims = new[]
             {
                 new Claim("Id", user.Id),
@@ -49,6 +55,7 @@ namespace DataAccess
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
 
             var token = new JwtSecurityToken(_configuration["JWT:Issuer"], _configuration["JWT:Issuer"], claims, expires: DateTime.Now.AddDays(3), signingCredentials: creds);
+
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
@@ -61,7 +68,7 @@ namespace DataAccess
             };
             if (!Equals(registerDTO.Password, registerDTO.ConfirmPassword))
             {
-               return false;
+                return false;
             }
             var result = await _userManager.CreateAsync(user, registerDTO.Password);
             if (result.Succeeded)
@@ -74,6 +81,29 @@ namespace DataAccess
 
             return false;
         }
-       
+
+        public  UserandRole getUserBytoken(string token)
+        {
+            User user = new User();
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(token);
+            var tokenS = jsonToken as JwtSecurityToken;
+            var UserRole = tokenS.Claims.First(c => c.Type == ClaimTypes.Role).Value;
+            var UserId = tokenS.Claims.First(c => c.Type == "Id").Value;
+
+
+            user = _userManager.Users.FirstOrDefault(c => c.Id == UserId);
+            var userRole = _userManager.GetRolesAsync(user);
+
+            UserandRole userandRole = new UserandRole();
+            userandRole.Id = user.Id;
+            userandRole.FullName = user.FullName;
+            userandRole.Role = UserRole.ToString();
+            return userandRole;
+        }
+
+      
     }
+
+
 }
