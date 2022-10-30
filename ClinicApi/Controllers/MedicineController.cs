@@ -2,7 +2,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,20 +13,25 @@ namespace ClinicApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+
     public class MedicineController : ControllerBase
     {
         private IMedicineRepository _medicineRepository = new MedicineRepository();
         // GET: api/<MedicineController>
         [HttpGet]
-        public ActionResult<IEnumerable<Medicine>> GetMedicine()
+        public ActionResult<DataTableResponse> GetMedicine()
         {
             var list = _medicineRepository.GetAllMedicine();
             if(list == null)
             {
                 return NoContent();
             }
-            return Ok(list);
+            return new DataTableResponse
+            {
+                RecordsTotal = list.Count,
+                RecordsFiltered = 10,
+                Data = list.ToArray()
+            };
         }
 
         // GET api/<MedicineController>/5

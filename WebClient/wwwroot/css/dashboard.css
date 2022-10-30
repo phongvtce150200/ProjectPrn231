@@ -231,3 +231,7 @@ main {
         font-weight: 600;
         color: var(---redBlood)
     }
+
+input, select{
+    background-color: #fff !important;
+}

@@ -123,7 +123,7 @@
                     </tr>             
                 </tfoot>
             </table>
-            <table class="table table-bordered border-secondary">
+            @*<table class="table table-bordered border-secondary" id="medTable">
                 <thead>
                     <tr>
                         <th colspan="4">
@@ -141,28 +141,64 @@
                         </th>
                     </tr>
                     <tr>
-                        <th>Amount</th>
+                        
                         <th>Medicine Name</th>
+                        <th>Amount</th>
                         <th>Type</th>
                         <th>Method</th>
                     </tr>
                 </thead>
                 <tbody style="height:200px;">
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </tbody>
+            </table>*@
+
+            <table id="example" class="table table-sm table-bordered table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Amount</th>
+                        <th>Expiration Date</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+
             </table>
         </form>
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 <!-- SignalR -->
 <script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
 @section Scripts{
+    <script>
+        var url = "https://localhost:5001/api/medicine";
+
+                console.log(data);
+                $(document).ready(function () {
+                    $('#example').DataTable({
+                        ajax: url,
+                        columns: [
+                            { data: 'medicineName' },
+                            { data: 'amount' },
+                            { data: 'expiration' },
+                            { data: 'price' },
+                        ],
+                    });
+                });
+            }
+        }
+        
+    </script>
+
     <script>
         LoadPatient();
         var patientList = [];

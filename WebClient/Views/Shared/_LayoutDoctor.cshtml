@@ -15,7 +15,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Main css -->
     <link rel="stylesheet" href="./css/dashboard.css">
+    <!-- DataTable -->
+    <link href="~/lib/datatables/css/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/lib/datatables/css/dataTables.bootstrap5.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <title>Admin Page</title>
 </head>
 <body>
@@ -24,7 +28,8 @@
         @await Html.PartialAsync("Header.cshtml")
         <main>
             @RenderBody()
-            @RenderSection("Scripts",false)
+            @*@RenderSection("Scripts",false)*@
+            @await RenderSectionAsync("Scripts", required: false)
         </main>
     </div>
 
@@ -33,7 +38,14 @@
         function toggleMenu() {
             subMenu.classList.toggle("open-menu");
         }
-
     </script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+    <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap5.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    
 </body>
 </html>

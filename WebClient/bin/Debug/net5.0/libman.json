@@ -8,6 +8,11 @@
       "files": [
         "dist/browser/signalr.js"
       ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "datatables@1.10.21",
+      "destination": "wwwroot/lib/datatables/"
     }
   ]
 }
