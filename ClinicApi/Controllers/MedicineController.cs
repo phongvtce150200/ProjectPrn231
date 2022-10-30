@@ -1,4 +1,5 @@
 ﻿using BusinessObject;
+using ClinicApi.DTO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repository;
@@ -24,6 +25,23 @@ namespace ClinicApi.Controllers
                 return NoContent();
             }
             return Ok(list);
+        }
+
+        [HttpGet("DataTableMedicine")]
+        [AllowAnonymous]
+        public ActionResult<DataTableResponse> GetMedicineDatatable()
+        {
+            var list = _medicineRepository.GetAllMedicine();
+            if (list == null)
+            {
+                return NoContent();
+            }
+            return new DataTableResponse
+            {
+                RecordsTotal = list.Count,
+                RecordsFiltered = 10,
+                Data = list.ToArray()
+            };
         }
 
         // GET api/<MedicineController>/5
