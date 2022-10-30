@@ -13,7 +13,6 @@ namespace ClinicApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
     public class MedicineController : ControllerBase
     {
         private IMedicineRepository _medicineRepository = new MedicineRepository();
