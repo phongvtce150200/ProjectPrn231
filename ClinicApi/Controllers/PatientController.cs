@@ -43,7 +43,17 @@ namespace ClinicApi.Controllers
             }
             JsonSerializerSettings jss = new JsonSerializerSettings();
             jss.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            string jsons = JsonConvert.SerializeObject(p, jss);
+            var myPatient = new  
+            {
+                PatientId = p.PatientId,
+                FullName = p.Account.FullName,
+                Gender = p.Account.Gender,
+                Birhtday = p.Account.Birhtday.ToShortDateString(),
+                Address = p.Account.Address,
+                Email = p.Account.Email,
+                PhoneNumber = p.Account.PhoneNumber
+            };
+            string jsons = JsonConvert.SerializeObject(myPatient, jss);
             return Content(jsons, "application/json");
         }
 

@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
 }
+<link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
 <div class="container d-flex">
     <div class="col-md-2" style="margin-right:5px;">
         <table class="table table-bordered border-secondary" style="max-height:300px;">
@@ -44,7 +45,6 @@
         </table>
         <div style="align-items:center; flex-direction: column; justify-content: space-around; display: flex;">
             <button class="btn btn-success" style="margin-bottom:20px;">Save and Print</button>
-            <button class="btn btn-warning" style="color:#fff;">Create a new Presciption</button>
         </div>
     </div>
     <div class="col-md-10">
@@ -62,18 +62,16 @@
                     <td class="d-flex justify-content-between">
                         Full Name: <input name="FullName" id="Account_FullName" type="text" class="form-control"
                                           style="width:500px;" readonly />
-                        DoB: <input name="Birthday" id="Account_Birthday" type="text" class="form-control"
+                        DoB: <input name="Birthday" id="Account_Birthday" type="date" class="form-control"
                                     style="width:200px;" readonly />
                         Gender: <input type="text" name="Gender" id="Account_Gender" class="form-control" style="width:80px" readonly />
                     </td>
                     <td class="d-flex justify-content-between">
                         Address: <input name="Address" id="Account_Address" type="text" class="form-control"
                                         style="width:300px;" readonly />
-                        City: <input type="text" class="form-control"
-                                     style="width:200px;" readonly />
+                        
                         Phone Number: <input name="PhoneNumber" id="Account_PhoneNumber" type="text" class="form-control"
                                              style="width:200px;" readonly />
-
                     </td>
                     <td class="d-flex justify-content-between">
                         Pulse: <input type="number" name="Pulse" id="Pulse" placeholder="bpm" class="form-control" style="width:80px;" readonly>
@@ -86,10 +84,10 @@
                 </tr>
             </tbody>
         </table>
-        <table class="table table-bordered border-secondary">
+        <table class="table table-bordered border-secondary" id="medListTable">
             <thead>
                 <tr>
-                    <th colspan="4" class="table-danger">
+                    <th colspan="5" class="table-danger">
                         <div class="d-flex justify-content-between">
                             <p style="color:#525252;">Medicine List And Using</p>
                             <button class="btn btn-success">Clear Presciption</button>
@@ -107,25 +105,16 @@
                     <th>Using/day</th>
                     <th>Using/times</th>
                     <th>Method</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
-            <tbody style="height: 170px;">
-                <tr>
-                    <td style="text-align:center">
-                        <input name="med_Name" id="medName" type="text" class="form-control"
-                               style="width:200px;" readonly />
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+            <tbody id="prescriptionTbody" style="height: 170px; border: 1px solid black;">
+                <tr name="med_Name" id="medName">
                 </tr>
             </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="4" style="text-align:right;">Total:</td>
-                </tr>
-            </tfoot>
+            
         </table>
+        <button for="medListTable" id="deleteBtn">Delete</button>
         <table id="medicineTable" class="table table-sm table-bordered table-striped" style="width:100%">
             <thead>
                 <tr>
@@ -149,7 +138,7 @@
 <script src="~/microsoft/signalr/dist/browser/signalr.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 @section Scripts{
     <script>
         LoadPatient();
@@ -203,7 +192,7 @@
                 const weight = document.querySelector("#Weight");
                 const height = document.querySelector("#Height");
                 patientFullName.value = item.patientFullName;
-                patientBirthDay.value = item.patientBirthDay;
+                patientBirthDay.value = dateToYMD(item.patientBirthDay);
                 patientGender.value = item.patientGender;
                 address.value = item.address;
                 phoneNumber.value = item.phoneNumber;
@@ -219,11 +208,18 @@
             var table = $('#medicineTable').DataTable({
                 ajax: "https://localhost:5001/api/Medicine/DataTableMedicine",
                 columns: [
-                    { data: 'medicineName' },
-                    { data: 'amount' },
-                    { data: 'expiration' },
-                    { data: 'price' },
-                ],
+                            { data: 'medicineName' },
+                            { data: 'amount' },
+                            { data: 'expiration',
+                                render: function(data, type, row) {
+                	                if(type === "sort" || type === 'type'){
+                    	                return data;
+                                    }
+                                    return moment(data).format("MM-DD-YYYY");
+                                }
+                            },
+                            { data: 'price' },
+                        ],
                 columnDefs: [
                     {
                         "targets": [0],
@@ -233,12 +229,12 @@
                     {
                         "targets": [1],
                         "visible": true,
-                        "searchable": false,
+                        "searchable": true,
                     },
                     {
                         "targets": [2],
                         "visible": true,
-                        "searchable": false,
+                        "searchable": true,
                     },
                     {
                         "targets": [3],
@@ -263,9 +259,66 @@
                 var selectedData = table.row('.selected').data();
                 const medicineName = document.querySelector("#medName");
                 medicineName.value = selectedData.medicineName;
-                table.row.add(medicineName.value);
                 console.log(medicineName.value);
+
+                var table1 = document.getElementById("prescriptionTbody");
+                var table1Rows = document.getElementById("prescriptionTbody").rows.length;
+                var rowIndex = table1Rows - 1;
+                if (rowIndex == 0) {
+                    var row = table1.insertRow(1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(-1);
+                    var cell3 = row.insertCell(-1);
+                    var cell4 = row.insertCell(-1);
+                    var cell5 = row.insertCell(-1);
+                    cell1.innerHTML = medicineName.value;
+                    cell2.innerHTML = '<input type="text" class="form-control" />';
+                    cell3.innerHTML = '<input type="text" class="form-control" />';
+                    cell4.innerHTML = '<input type="text" class="form-control" />';
+                    cell5.innerHTML = '<input type="checkbox" checked />';
+                    console.log(rowIndex);
+                }
+                else {
+                    var row = table1.insertRow(-1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(-1);
+                    var cell3 = row.insertCell(-1);
+                    var cell4 = row.insertCell(-1);
+                    var cell5 = row.insertCell(-1);
+                    cell1.innerHTML = medicineName.value;
+                    cell2.innerHTML = '<input type="text" class="form-control" />';
+                    cell3.innerHTML = '<input type="text" class="form-control" />';
+                    cell4.innerHTML = '<input type="text" class="form-control" />';
+                    cell5.innerHTML = '<input type="checkbox" checked />';
+                    console.log(rowIndex);
+
+                }
             });
         });
+
+        document.getElementById("deleteBtn").addEventListener("click", function () {
+            var tableRef = document.getElementById('medListTable');
+            var tableRows = document.getElementById("medListTable").rows;
+            var checkedIndexes = [];
+            for (var i = 0; i < tableRows.length; i++) {
+                var checkboxSelected = tableRows[i] && tableRows[i].cells[0].firstElementChild.checked;
+                if (checkboxSelected) {
+                    checkedIndexes.push(i);
+                }
+            }
+
+            for (var k = 0; k < checkedIndexes.length; k++) {
+                tableRef.deleteRow(checkedIndexes[k] - k);
+            }
+        });
+
+        function dateToYMD(end_date) {
+            var ed = new Date(end_date);
+            var d = ed.getDate();
+            var m = ed.getMonth() + 1;
+            var y = ed.getFullYear();
+            return '' + y + '-' + (m <= 9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
+        }
+
     </script>
 }

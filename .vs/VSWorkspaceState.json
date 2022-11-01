@@ -3,11 +3,12 @@
     "",
     "\\ClinicApi",
     "\\ClinicApi\\Controllers",
+    "\\DataAccess",
     "\\WebClient",
     "\\WebClient\\Views",
     "\\WebClient\\Views\\MedicalExam",
     "\\WebClient\\Views\\Medicine"
   ],
-  "SelectedNode": "\\PRN231_Project.sln",
+  "SelectedNode": "\\WebClient\\Views\\MedicalExam\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

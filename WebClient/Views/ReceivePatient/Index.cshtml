@@ -41,20 +41,19 @@
                 <tr>
                     <td class="d-flex justify-content-between">
                         Full Name: <input name="FullName" id="Account_FullName" type="text" class="form-control"
-                                          style="width:500px;" readonly />
-                        DoB: <input name="Birthday" id="Account_Birthday" type="text" class="form-control"
-                                    style="width:200px;" readonly />
-                        Gender: <input type="text" name="Gender" id="Account_Gender" class="form-control" style="width:80px" readonly />
+                                          style="width:500px;" />
+                        DoB: <input name="Birthday" id="Account_Birthday" type="date" value="02/02/2002" class="form-control"
+                                    style="width:200px;" />
+                        Gender: <input type="text" name="Gender" id="Account_Gender" class="form-control" style="width:80px" />
                     </td>
 
 
                     <td class="d-flex justify-content-between">
                         Address: <input name="Address" id="Account_Address" type="text" class="form-control"
-                                        style="width:300px;" readonly />
-                        City: <input type="text" class="form-control"
-                                     style="width:200px;" readonly />
+                                        style="width:300px;" />
+
                         Phone Number: <input name="PhoneNumber" id="Account_PhoneNumber" type="text" class="form-control"
-                                             style="width:200px;" readonly />
+                                             style="width:200px;" />
 
                     </td>
 
@@ -70,7 +69,7 @@
 
                 </tr>
             </tbody>
-            
+
             </form>
 
         </table>
@@ -149,10 +148,10 @@
                     $.each(result, (k, v) => {
                         tr +=
                             `<tr>
-                                                                                <td>
-                                                                                     <span onclick="handlePatient(this)"  data-patient="https://localhost:5001/api/Patient/${v.PatientId}" name="patient" id="patient"> ${v.Account.FullName} </span>
-                                                                                </td>
-                                                                            </tr>`
+                                                                                        <td>
+                                                                                             <span onclick="handlePatient(this)"  data-patient="https://localhost:5001/api/Patient/${v.PatientId}" name="patient" id="patient"> ${v.Account.FullName} </span>
+                                                                                        </td>
+                                                                                    </tr>`
                     })
                     $("#patientBody").html(tr);
                 },
@@ -173,6 +172,7 @@
             const birthday = document.querySelector("#Account_Birthday");
             const gender = document.querySelector("#Account_Gender");
             const address = document.querySelector("#Account_Address");
+            const phonenumber = document.querySelector("#Account_PhoneNumber");
             const url = element?.dataset.patient;
             $.ajax({
                 url,
@@ -180,10 +180,11 @@
                 dataType: 'json', // added data type
                 success: (result) => {
                     console.log(result);
-                    fullname.value = result.Account.FullName;
-                    birthday.value = result.Account.Birhtday;
-                    gender.value = result.Account.Gender;
-                    address.value = result.Account.Address;
+                    fullname.value = result.FullName;
+                    birthday.value = dateToYMD(result.Birhtday);
+                    gender.value = result.Gender == 1 ? "Male" : "Female";
+                    address.value = result.Address;
+                    phonenumber.value = result.PhoneNumber;
                 },
                 error: (error) => {
                     console.log(error)
@@ -191,6 +192,12 @@
             });
         };
 
-        
+        function dateToYMD(end_date) {
+            var ed = new Date(end_date);
+            var d = ed.getDate();
+            var m = ed.getMonth() + 1;
+            var y = ed.getFullYear();
+            return '' + y + '-' + (m <= 9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
+        }
     </script>
 }
