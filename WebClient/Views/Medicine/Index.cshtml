@@ -4,21 +4,7 @@
 @{
     Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
 }
-<div>
-    <div>
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Create new Medicine</button>
-        <button class="btn btn-warning">Sort by inventory quantity</button>
-        <button class="btn btn-warning">Sort by expiration date</button>
-        <form style="float:right;">
-            <div class="input-group rounded">
-                <input type="search" class="form-control rounded" placeholder="Search"/>
-                <button class="input-group-text border-0">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
+@model IEnumerable<Medicine>
 <hr />
 <div>
     <table class="table table-hover">
@@ -29,37 +15,95 @@
                 <th scope="col">Price</th>
                 <th scope="col">Expiration</th>
                 <th scope="col">Amount</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>mdo</td>
-                <td>
-                    <a href="#editEmployeeModal" class="edit" data-toggle="modal" style="text-decoration:none; color:orange;">|<i class="fa-solid fa-pen-to-square"></i>|</a>
-                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal" style="text-decoration:none; color:red;">|<i class="fa-solid fa-trash"></i>|</a>
-                </td>
-            </tr>
+        <tbody id="medicineBody">
         </tbody>
     </table>
 </div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="EditexampleModal" tabindex="-1" aria-labelledby="EditexampleModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="EditexampleModal">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+
+                <form asp-action="UpdateMedicine" asp-controller="Medicine" method="post">
+                    <div class="form-group">
+                        <input type="text" id="medicineName" class="form-control" placeholder="Medicine Name" style="text-align: center;" />
+                        <span name="medicineName" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="row justify-content-between d-flex" style="margin-bottom : 8px; margin-top: 8px;">
+                        <div class="form-group col-md-6">
+                            <input type="text" id="price" class="form-control" placeholder="Price" style="text-align: center;" />
+                            <span name="price" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <input type="date" value="expiration" id="expiration" class="form-control" placeholder="Expiration" style="text-align: center;" />
+                            <span name="expiration" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="amount" class="form-control" placeholder="Amount" style="text-align: center;" />
+                        <span name="amount" class="text-danger"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <input type="submit" class="btn btn-primary" value="Save Change" />
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
 </div>
+@section Scripts{
+    <script>
+        medicineList = [];
+        LoadMedicine();
+        function LoadMedicine() {
+            var tr = ``;
+            $.ajax({
+                url: "https://localhost:5001/api/Medicine",
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: (result) => {
+                    medicineList = result
+                    $.each(result, (k, v) => {
+                        tr +=
+                            `<tr>
+                                <th scope="row">${v.medicineId}</th>
+                                <td>${v.medicineName}</td>
+                                <td>${v.price}</td>
+                                <td>${v.expiration}</td>
+                                <td>${v.amount}</td>
+                                <td>
+                                    <button href="#" value="${k}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#EditexampleModal" name="btnEdit">Edit</button>
+                                </td>                                                                                                              
+                            </tr>`
+                    })
+                    $("#medicineBody").html(tr);
+                    assignClickEvent();
+                },
+                error: (error) => {
+                    console.log(error)
+                }
+            });
+        };
+
+        function assignClickEvent() {
+            $("button[name='btnEdit']").click((e) => {
+                let id = e.currentTarget.value;
+                console.log(id);
+            });
+        }
+
+    </script>
+}

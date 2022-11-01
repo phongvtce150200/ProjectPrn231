@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicApi", "ClinicApi\ClinicApi.csproj", "{09165F3B-3FAD-402C-A996-C58CF8BB7154}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "WebClient\WebClient.csproj", "{5FFC5128-91F6-4A00-B9AD-3F0ED5BFB92A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient", "WebClient\WebClient.csproj", "{5FFC5128-91F6-4A00-B9AD-3F0ED5BFB92A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RDCLDesign", "RDCLDesign\RDCLDesign.csproj", "{27DA7ED5-D2D5-4EC9-8204-27E75DF91E7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{5FFC5128-91F6-4A00-B9AD-3F0ED5BFB92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FFC5128-91F6-4A00-B9AD-3F0ED5BFB92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FFC5128-91F6-4A00-B9AD-3F0ED5BFB92A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27DA7ED5-D2D5-4EC9-8204-27E75DF91E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27DA7ED5-D2D5-4EC9-8204-27E75DF91E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27DA7ED5-D2D5-4EC9-8204-27E75DF91E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27DA7ED5-D2D5-4EC9-8204-27E75DF91E7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

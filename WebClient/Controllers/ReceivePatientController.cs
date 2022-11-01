@@ -11,6 +11,7 @@ using JsonSerializer = System.Text.Json.JsonSerializer;
 using System;
 using Microsoft.AspNetCore.SignalR;
 using WebClient.Hubs;
+using Microsoft.AspNetCore.Hosting;
 
 namespace WebClient.Controllers
 {
@@ -20,8 +21,9 @@ namespace WebClient.Controllers
         private string PatientUrl = "";
         private string QueueApi = "";
         IHubContext<SignalRServer> _signalRServer;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ReceivePatientController(IHubContext<SignalRServer> signalRServer)
+        public ReceivePatientController(IHubContext<SignalRServer> signalRServer, IWebHostEnvironment webHostEnvironment)
         {
             client = new HttpClient();
             var contentType = new MediaTypeWithQualityHeaderValue("application/json");
@@ -29,6 +31,7 @@ namespace WebClient.Controllers
             PatientUrl = "https://localhost:5001/api/Patient";
             QueueApi = "https://localhost:5008/api/Queue";
             _signalRServer = signalRServer;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {
@@ -94,6 +97,11 @@ namespace WebClient.Controllers
                 return BadRequest(respone);
             }
             return BadRequest(ModelState);
+        }
+
+        public IActionResult PrintQueueTicket()
+        {
+            return View();
         }
     }
 }

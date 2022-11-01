@@ -1,0 +1,10 @@
+G:\PRN231\GITHUB\ProjectPrn231\RDCLDesign\bin\Debug\RDCLDesign.exe.config
+G:\PRN231\GITHUB\ProjectPrn231\RDCLDesign\bin\Debug\RDCLDesign.exe
+G:\PRN231\GITHUB\ProjectPrn231\RDCLDesign\bin\Debug\RDCLDesign.pdb
+G:\PRN231\GITHUB\ProjectPrn231\RDCLDesign\obj\Debug\RDCLDesign.csproj.AssemblyReference.cache
+G:\PRN231\GITHUB\ProjectPrn231\RDCLDesign\obj\Debug\RDCLDesign.csproj.SuggestedBindingRedirects.cache
+G:\PRN231\GITHUB\ProjectPrn231\RDCLDesign\obj\Debug\RDCLDesign.Properties.Resources.resources
+G:\PRN231\GITHUB\ProjectPrn231\RDCLDesign\obj\Debug\RDCLDesign.csproj.GenerateResource.cache
+G:\PRN231\GITHUB\ProjectPrn231\RDCLDesign\obj\Debug\RDCLDesign.csproj.CoreCompileInputs.cache
+G:\PRN231\GITHUB\ProjectPrn231\RDCLDesign\obj\Debug\RDCLDesign.exe
+G:\PRN231\GITHUB\ProjectPrn231\RDCLDesign\obj\Debug\RDCLDesign.pdb

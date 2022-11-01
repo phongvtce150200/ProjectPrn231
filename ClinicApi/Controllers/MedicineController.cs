@@ -11,7 +11,7 @@ namespace ClinicApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class MedicineController : ControllerBase
     {
         private IMedicineRepository _medicineRepository = new MedicineRepository();
