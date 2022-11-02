@@ -16,11 +16,9 @@ namespace Repository
         {
             this.authenticationDAO = authenticationDAO;
         }
+        public UserandRole GetByToken(string token) => authenticationDAO.getUserBytoken(token);
 
         public Task<string> Login(LoginDTO loginDTO) => authenticationDAO.Login(loginDTO);
-
-
-
         public Task<bool> Register(RegisterDTO registerDTO) => authenticationDAO.Register(registerDTO);
     }
 }

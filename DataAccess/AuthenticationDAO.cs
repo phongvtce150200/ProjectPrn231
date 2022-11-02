@@ -74,6 +74,25 @@ namespace DataAccess
 
             return false;
         }
-       
+        public UserandRole getUserBytoken(string token)
+        {
+            User user = new User();
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(token);
+            var tokenS = jsonToken as JwtSecurityToken;
+            var UserRole = tokenS.Claims.First(c => c.Type == ClaimTypes.Role).Value;
+            var UserId = tokenS.Claims.First(c => c.Type == "Id").Value;
+
+
+            user = _userManager.Users.FirstOrDefault(c => c.Id == UserId);
+            var userRole = _userManager.GetRolesAsync(user);
+
+            UserandRole userandRole = new UserandRole();
+            userandRole.Id = user.Id;
+            userandRole.FullName = user.FullName;
+            userandRole.Role = UserRole.ToString();
+            return userandRole;
+        }
+
     }
 }

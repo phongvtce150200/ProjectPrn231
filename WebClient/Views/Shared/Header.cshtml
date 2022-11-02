@@ -7,17 +7,17 @@
     <div class="user-wrapper">
         <img src="./img/user.png" width="40px" height="40px" onclick="toggleMenu()">
         <div onclick="toggleMenu()">
-            <h5>Thanh Phong Vo</h5>
-            <small>Doctor</small>
+            <h5>@ViewBag.FullName</h5>
+            <small>@ViewBag.Role</small>
         </div>
         <div class="sub-menu-wrap" id="subMenu">
             <div class="sub-menu">
                 <div class="user-info">
                     <img src="./img/user.png" width="20px" height="20px">
-                    <p>Thanh Phong Vo<p>
+                    <p>@ViewBag.FullName<p>
                 </div>
                 <hr>
-                <a href="" class="sub-menu-link">
+                <a asp-action="Logout" asp-controller="Authentication" class="sub-menu-link">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <p>Logout</p>
                     <span>></span>

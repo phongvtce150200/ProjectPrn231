@@ -11,5 +11,6 @@ namespace Repository
     {
         Task<string> Login(LoginDTO loginDTO);
         Task<bool> Register(RegisterDTO registerDTO);
+        UserandRole GetByToken(string token);
     }
 }

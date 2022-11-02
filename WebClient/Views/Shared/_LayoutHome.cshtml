@@ -59,14 +59,14 @@
     <!-- form-right -->
     
     <div class="container" id="container">
-        <form class="form-right-login" id="loginForm">
+        <form asp-action="Login" asp-controller="Authentication" class="form-right-login" id="loginForm">
           <h2>Welcome User</h2>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input type="text" name="UserName" placeholder="Email" />
+          <input type="password" name="Password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
           <button class="confrim">Sign In</button>
         </form> 
-        <form class="form-right-register" id="registerForm">
+        <form asp-action="Register" asp-controller="Authentication" class="form-right-register" id="registerForm">
             <h2>Register for more</h2>
             <input type="text" placeholder="Username" />
             <input type="email" placeholder="Email" />

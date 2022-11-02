@@ -19,11 +19,20 @@ namespace ClinicApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([FromForm] LoginDTO loginDTO)
+        public async Task<IActionResult> Login(LoginDTO loginDTO)
         {
             var resultToken = await _authenticationRepository.Login(loginDTO);
             if (string.IsNullOrEmpty(resultToken)) return BadRequest("Wrong Username or Password");
-            return Ok(new { Token = resultToken });
+            return Ok(resultToken);
+        }
+
+        [HttpGet("GetUserByToken")]
+        public UserandRole getUserBytoken(string token)
+        {
+            UserandRole user = new UserandRole();
+            user = _authenticationRepository.GetByToken(token);
+
+            return user;
         }
     }
 }

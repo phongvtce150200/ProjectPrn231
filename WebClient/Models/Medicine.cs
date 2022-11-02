@@ -7,14 +7,14 @@ namespace WebClient.Models
 {
     public class Medicine
     {
-        public int MedicineId { get; set; }
+        public int medicineId { get; set; }
         [Required]
         [Column(TypeName = "varchar(50)")]
-        public string MedicineName { get; set; }
+        public string medicineName { get; set; }
         [Required]
         [Column(TypeName = "money")]
-        public decimal Price { get; set; }
-        public DateTime Expiration { get; set; }
-        public int Amount { get; set; }
+        public decimal price { get; set; }
+        public DateTime expiration { get; set; }
+        public int amount { get; set; }
     }
 }

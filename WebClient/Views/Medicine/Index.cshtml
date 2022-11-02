@@ -5,6 +5,31 @@
     Layout = "~/Views/Shared/_LayoutDoctor.cshtml";
 }
 @model IEnumerable<Medicine>
+
+<style>
+    .input-delete{
+
+        border: 3px solid white;
+        border-radius: 9px;
+        width: 100%;
+        font-size: 22px;
+        font-weight: 500;
+        outline: none;
+    }
+
+    .input-delete:hover {
+        border: none;
+    }
+
+    .modal-footer{
+        border-top: none;
+    }
+</style>
+<div>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"> Create new Medicine </button>
+
+</div>
+
 <hr />
 <div>
     <table class="table table-hover">
@@ -19,9 +44,77 @@
             </tr>
         </thead>
         <tbody id="medicineBody">
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.medicineId</td>
+                    <td>@item.medicineName</td>
+                    <td>@item.price</td>
+                    <td>@item.expiration.ToShortDateString()</td>
+                    <td>@item.amount</td>
+                    <td>
+
+                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#EditexampleModal" name="test"> Edit </button>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteexampleModal" name="delete"> Delete </button>
+                        <input type="hidden" asp-for="@item.medicineId">
+                    </td>
+
+
+                </tr>
+            }
         </tbody>
     </table>
 </div>
+
+<!-- Modal Create -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form asp-action="CreateMedicine" asp-controller="Medicine" method="post">
+                    <div class="form-group">
+                        <input type="text" name="medicineName" class="form-control" placeholder="Medicine Name" style="text-align: center;" />
+                        <span name="medicineName" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="row justify-content-between d-flex" style="margin-bottom : 8px; margin-top: 8px;">
+                        <div class="form-group col-md-6">
+                            <input type="text" name="price" class="form-control" placeholder="Price" style="text-align: center;" />
+                            <span name="price" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <input type="date" value="expiration" name="Expiration" class="form-control" placeholder="Expiration" style="text-align: center;" />
+                            <span name="expiration" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="amount" class="form-control" placeholder="Amount" style="text-align: center;" />
+                        <span name="amount" class="text-danger"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-primary" value="Create" />
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal Edit -->
 <div class="modal fade" id="EditexampleModal" tabindex="-1" aria-labelledby="EditexampleModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -32,31 +125,39 @@
             <div class="modal-body">
 
                 <form asp-action="UpdateMedicine" asp-controller="Medicine" method="post">
+                    <div class="form-group" hidden>
+                        <input type="text" id="medicineId" name="medicineId" class="form-control" placeholder="Medicine Name" style="text-align: center;" />
+                        <span name="medicineName" class="text-danger"></span>
+                    </div>
+
+
                     <div class="form-group">
-                        <input type="text" id="medicineName" class="form-control" placeholder="Medicine Name" style="text-align: center;" />
+                        <input type="text" id="medicineName" name="medicineName" class="form-control" placeholder="Medicine Name" style="text-align: center;" />
                         <span name="medicineName" class="text-danger"></span>
                     </div>
 
 
                     <div class="row justify-content-between d-flex" style="margin-bottom : 8px; margin-top: 8px;">
                         <div class="form-group col-md-6">
-                            <input type="text" id="price" class="form-control" placeholder="Price" style="text-align: center;" />
+                            <input type="text" id="price" name="price" class="form-control" placeholder="Price" style="text-align: center;" />
                             <span name="price" class="text-danger"></span>
                         </div>
 
                         <div class="form-group col-md-6">
-                            <input type="date" value="expiration" id="expiration" class="form-control" placeholder="Expiration" style="text-align: center;" />
+                            <input type="date" value="expiration" name="expiration" id="expiration" class="form-control" placeholder="Expiration" style="text-align: center;" />
                             <span name="expiration" class="text-danger"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" id="amount" class="form-control" placeholder="Amount" style="text-align: center;" />
+                        <input type="text" id="amount" name="amount" class="form-control" placeholder="Amount" style="text-align: center;" />
                         <span name="amount" class="text-danger"></span>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
                         <input type="submit" class="btn btn-primary" value="Save Change" />
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        @*<input type="hidden" name="medicineId" id="medicineId"/>*@
                     </div>
                 </form>
 
@@ -64,46 +165,94 @@
         </div>
     </div>
 </div>
-@section Scripts{
-    <script>
-        medicineList = [];
-        LoadMedicine();
-        function LoadMedicine() {
-            var tr = ``;
+
+
+<!-- Modal Delete -->
+<div class="modal fade" id="DeleteexampleModal" tabindex="-1" aria-labelledby="DeleteexampleModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="DeleteexampleModal">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form asp-action="DeleteMedicine" asp-controller="Medicine" method="post">
+                    <div class="form-group" hidden>
+                        <input type="text" id="medicineId" name="medicineId" class="form-control" style="text-align: center;" />
+                        <span name="medicineName" class="text-danger"></span>
+                    </div>
+
+
+
+                    <input type="text" id="medicineName" name="medicineName" class="input-delete" placeholder="Medicine Name" style="text-align:center; border:none;" readonly />
+
+
+
+                    <div class="modal-footer">
+
+                        <input type="submit" class="btn btn-primary" value="Save Change" />
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        @*<input type="hidden" name="medicineId" id="medicineId"/>*@
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('[data-bs-toggle="modal"]').tooltip();
+
+        $("button[name='test']").on('click', function () {
+            var id = $(this).parent().find('#item_medicineId').val();
             $.ajax({
-                url: "https://localhost:5001/api/Medicine",
                 type: 'GET',
-                dataType: 'json', // added data type
-                success: (result) => {
-                    medicineList = result
-                    $.each(result, (k, v) => {
-                        tr +=
-                            `<tr>
-                                <th scope="row">${v.medicineId}</th>
-                                <td>${v.medicineName}</td>
-                                <td>${v.price}</td>
-                                <td>${v.expiration}</td>
-                                <td>${v.amount}</td>
-                                <td>
-                                    <button href="#" value="${k}" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#EditexampleModal" name="btnEdit">Edit</button>
-                                </td>                                                                                                              
-                            </tr>`
-                    })
-                    $("#medicineBody").html(tr);
-                    assignClickEvent();
-                },
-                error: (error) => {
-                    console.log(error)
+                data: { id: id },
+                url: "Medicine/Find/" + id,
+                success: function (result) {
+                    $('#EditexampleModal #medicineId').val(result.medicineId);
+                    $('#EditexampleModal #medicineName').val(result.medicineName);
+                    $('#EditexampleModal #price').val(result.price);
+                    $('#EditexampleModal #expiration').val(dateToYMD(result.expiration));
+                    $('#EditexampleModal #amount').val(result.amount);
+                    console.log(result);
                 }
-            });
-        };
+                                            
+            })
+        });
 
-        function assignClickEvent() {
-            $("button[name='btnEdit']").click((e) => {
-                let id = e.currentTarget.value;
-                console.log(id);
-            });
-        }
+    });
 
-    </script>
-}
+    function dateToYMD(end_date) {
+        var ed = new Date(end_date);
+        var d = ed.getDate();
+        var m = ed.getMonth() + 1;
+        var y = ed.getFullYear();
+        return '' + y + '-' + (m <= 9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
+    }
+
+    $(document).ready(function () {
+        $('[data-bs-toggle="modal"]').tooltip();
+
+        $("button[name='delete']").on('click', function () {
+            var id = $(this).parent().find('#item_medicineId').val();
+            $.ajax({
+                type: 'GET',
+                data: { id: id },
+                url: "Medicine/Find/" + id,
+                success: function (result) {
+                    $('#DeleteexampleModal #medicineId').val(result.medicineId);
+                    $('#DeleteexampleModal #medicineName').val( "Are you want to delete " + result.medicineName + "?");
+                }
+            })
+        });
+
+    });
+
+
+
+
+</script>

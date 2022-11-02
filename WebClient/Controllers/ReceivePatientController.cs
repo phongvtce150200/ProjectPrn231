@@ -12,6 +12,7 @@ using System;
 using Microsoft.AspNetCore.SignalR;
 using WebClient.Hubs;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace WebClient.Controllers
 {
@@ -38,6 +39,16 @@ namespace WebClient.Controllers
             //FE active
             string active = "active";
             ViewData["ReceivePatient"] = active;
+            string SessionFullname = HttpContext.Session.GetString("fullname");
+            ViewData["fullname"] = SessionFullname;
+            string SessionRole = HttpContext.Session.GetString("role");
+            ViewData["role"] = SessionRole;
+
+
+            if (!SessionRole.Equals("Nurse"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
 
             return View();
         }
