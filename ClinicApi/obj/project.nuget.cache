@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4nR16zOaK7W9IKnKrqVH2dVRpXPPQbnerth1lSj3lbEd9BY1XEWY6/KiJK2pE7QK2/rx8hOrZjuezc3/sPIIiw==",
+  "dgSpecHash": "yUw7gZfOjHf1+1BMqAee4MBE12E04KkmCicWQrr6dX84pJfYhiWlKkDwWyfsU6M+V7OeHVG/O2raqFa0ow0hxw==",
   "success": true,
-  "projectFilePath": "D:\\FPTFinalProject\\ProjectPrn231\\ClinicApi\\ClinicApi.csproj",
+  "projectFilePath": "D:\\groupPj\\grPj\\groupPj\\ClinicApi\\ClinicApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\namtr\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\namtr\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

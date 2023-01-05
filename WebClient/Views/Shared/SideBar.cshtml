@@ -8,6 +8,9 @@
             <li class="@ViewBag.DashBoard">
                 <a asp-action="Index" asp-controller="DoctorPage" class="link-active" id="dashBoard"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
             </li>
+            <li class="@ViewBag.Scheduler">
+                <a asp-action="Overview" asp-controller="Schedule" class="link-active" id="Schedule"><i class="fa-solid fa-stethoscope"></i><span>Schedule</span></a>
+            </li>
             <li class="@ViewBag.MedicalExam">
                 <a asp-action="Index" asp-controller="MedicalExam" class="link-active" id="medicalExam"><i class="fa-solid fa-stethoscope"></i><span>Medical Exam</span></a>
             </li>

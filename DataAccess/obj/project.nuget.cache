@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JKSwlvtRo7iGHjxVC8OPtEY2wiXisIdmLQ6Y/icN7ne8CDcaIJjQo0Q4hccvBeIpLUEUuoanLP+yReV1NZSAew==",
+  "dgSpecHash": "iioXubSNzkxk+YmPGwX7kxwhCZe5ns67NXoR2cvPUuOKClznws7qhYCXaJ67p6ieXZIAni9o5QR0uJNE0E19Hw==",
   "success": true,
-  "projectFilePath": "D:\\FPTFinalProject\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "D:\\groupPj\\grPj\\groupPj\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\namtr\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\namtr\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

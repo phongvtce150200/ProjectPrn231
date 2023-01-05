@@ -30,7 +30,7 @@ namespace ClinicApi
         public void ConfigureServices(IServiceCollection services)
         {
             //CORS policy
-            services.AddCors(options =>
+           /* services.AddCors(options =>
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   policy =>
@@ -38,8 +38,11 @@ namespace ClinicApi
                                       policy.WithOrigins("https://localhost:44321");
 
                                   });
-            });
-
+            });*/
+            services.AddCors(p => p.AddPolicy("MyCors", build =>
+            {
+                build.WithOrigins("*").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+            }));
             services.AddDbContext<ApplicationDbContext>();
 
             //Add Identity
@@ -143,7 +146,7 @@ namespace ClinicApi
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseRouting();
-
+            app.UseCors("MyCors");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

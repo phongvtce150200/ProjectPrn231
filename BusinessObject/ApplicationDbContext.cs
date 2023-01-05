@@ -29,6 +29,7 @@ namespace BusinessObject
         public DbSet<Schedule> schedules { get; set; }
         public DbSet<ReservedSchedule> reservedSchedules { get; set; }
         public DbSet<ScheduleDetails> ScheduleDetails { get; set; }
+        public DbSet<Event> events { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

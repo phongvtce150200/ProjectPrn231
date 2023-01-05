@@ -7227,21 +7227,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\namtr\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\namtr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FPTFinalProject\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "D:\\groupPj\\grPj\\groupPj\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "D:\\FPTFinalProject\\ProjectPrn231\\DataAccess\\DataAccess.csproj",
+      "projectPath": "D:\\groupPj\\grPj\\groupPj\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\namtr\\.nuget\\packages\\",
-      "outputPath": "D:\\FPTFinalProject\\ProjectPrn231\\DataAccess\\obj\\",
+      "outputPath": "D:\\groupPj\\grPj\\groupPj\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\namtr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -7257,8 +7253,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\FPTFinalProject\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "D:\\FPTFinalProject\\ProjectPrn231\\BusinessObject\\BusinessObject.csproj"
+            "D:\\groupPj\\grPj\\groupPj\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\groupPj\\grPj\\groupPj\\BusinessObject\\BusinessObject.csproj"
             }
           }
         }
@@ -7294,7 +7290,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

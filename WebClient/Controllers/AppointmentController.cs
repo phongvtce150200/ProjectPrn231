@@ -24,7 +24,7 @@ namespace WebClient.Controllers
             client.DefaultRequestHeaders.Accept.Add(contentType);
             ScheduleDetailsUrl = "https://localhost:5001/api/ScheduleDetails";
         }
-        public IActionResult Index()
+        /*public IActionResult Index()
         {
             string active = "active";
             ViewBag.Appointment = active;
@@ -66,6 +66,29 @@ namespace WebClient.Controllers
                 return Content(jsons, "application/json");
             }
             return null;
+        }*/
+
+        public ActionResult Index()
+        {
+            ViewBag.appointments = GetScheduleData();
+            return View();
+        }
+        public List<AppointmentData> GetScheduleData()
+        {
+            List<AppointmentData> appData = new List<AppointmentData>();
+            appData.Add(new AppointmentData
+            {
+                Subject = "Paris",
+                StartTime = new DateTime(2018, 2, 15, 10, 0, 0),
+                EndTime = new DateTime(2018, 2, 15, 12, 30, 0)
+            });
+            return appData;
+        }
+        public class AppointmentData
+        {
+            public string Subject { get; set; }
+            public DateTime StartTime { get; set; }
+            public DateTime EndTime { get; set; }
         }
     }
 }

@@ -1,0 +1,384 @@
+﻿@{
+    ViewData["Title"] = "Overview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.print.css">*@
+
+<h1>Overview</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <br />
+            <div id="boostrapModalFullCalendar"></div>
+        </div>
+    </div>
+</div>
+<div id="fullCalModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"></span><span class="sr-only">close</span></button>
+                <h4 id="modalTitle" class="modal-title"></h4>
+            </div>
+            <div id="modalBody" class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="fullCalModalSave" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"></span><span class="sr-only">close</span></button>
+                <h4 id="modalTitle" class="modal-title"></h4>
+            </div>
+            <div id="modalBody" class="modal-body">
+                <form class="col-md-12 form-horizontal">
+                    <input type="hidden" id="hdEventId" value="0" />
+                    <div class="form-group">
+                        <label>Reason</label>
+                        @*<input type="text" id="txtSubject" class="form-control" />*@
+                        <select id="txtSubject" class="form-control" autofocus>
+                            <option value="casual check">1. casual check</option>
+                            <option value="revisit">2. revisit</option>
+                            <option value="others">3. others</option>
+                            <option value="">4. null</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Appointment Date</label>
+                        <div class="input-group" id="dtp0">
+                            <input type="text" id="txtDate" class="form-control" readonly />
+                            <span class="input-group-addon"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" hidden>
+                        <label>Start</label>
+                        <div class="input-group" id="dtp1">
+                            <input type="datetime-local" id="txtStart" class="form-control" />
+                            <span class="input-group-addon"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" hidden>
+                        <label>End</label>
+                        <div class="input-group" id="dtp2">
+                            <input type="datetime-local" id="txtEnd" class="form-control" />
+                            <span class="input-group-addon"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Choose slot</label>
+                        <select id="timeSlot" class="form-control">
+                            <option value="T08:00:00,T09:30:00">1. slot1 (08:00-09:30)</option>
+                            <option value="T09:30:00,T11:00:00">2. slot2 (09:30-11:00)</option>
+                            <option value="T11:00:00,T12:30:00">3. slot3 (11:00-12:30)</option>
+                            <option value="T14:00:00,T15:30:00">4. slot4 (14:00-15:30)</option>
+                            <option value="T15:30:00,T17:00:00">5. slot5 (15:30-17:00)</option>
+                            <option value="T17:00:00,T18:30:00">6. slot6 (17:00-18:30)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="txtDescription" rows="3" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Theme Color</label>
+                        <select id="ddThemeColor" class="form-control">
+                            <option value="">Default</option>
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="black">Black</option>
+                            <option value="green">Green</option>
+                        </select>
+                    </div>
+                    <button type="button" id="btnSave" class="btn btn-success">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.1/fullcalendar.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.1/fullcalendar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.1/fullcalendar.print.min.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.1/gcal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            var events = [];
+            var selectedEvent = null;
+            FetchEventNRerenderCalendar();
+            function FetchEventNRerenderCalendar() {
+                events = [];
+                $.ajax({
+                    type: "GET",
+                    url: "https://localhost:5001/api/event",
+                    success: function (data) {
+                        $.each(data, function (i, v) {
+                            events.push({
+                                Id: v.id,
+                                title: v.title,
+                                description: v.description,
+                                start: moment(v.start),
+                                end: v.end != null ? moment(v.end) : null,
+                                color: v.color,
+                                allDay: v.allDay
+                            });
+                        })
+                        GenerateCalender(events);
+                    },
+                    error: function (error) {
+                        alert('failed');
+                    }
+                })
+            }
+
+            function GenerateCalender(events) {
+                $("#boostrapModalFullCalendar").fullCalendar('destroy');
+                $("#boostrapModalFullCalendar").fullCalendar({
+                    contentHeight: 600,
+                    defaultDate: new Date(),
+                    timeFormat: 'h(:mm)a',
+                    header: {
+                        left: 'prev, next',
+                        center: 'title',
+                        right: 'today'
+                    },
+                    eventLimit: true,
+                    eventColor: '#378006',
+                    events: events,
+                    eventClick: function (event, jsEvent, view) {
+                        selectedEvent = event;
+                        $('#modalTitle').html(event.title);
+                        var $description = $('<div/>');
+                        $description.append($('<p/>').html('<b>Start: </b>' + event.start.format("DD-MMM-YYYY HH:mm a")));
+                        if (event.end != null) {
+                            $description.append($('<p/>').html('<b>End: </b>' + event.end.format("DD-MMM-YYYY HH:mm a")));
+                        }
+                        $description.append($('<p/>').html('<b>Description: </b>' + event.description))
+                        $('#modalBody').empty().html($description);
+                        $('#eventUrl').attr('href', event.url);
+                        $('#fullCalModal').modal();
+                        return false;
+                    },
+                    selectable: true,
+                    select: function (start, end) {
+                        selectedEvent = {
+                            Id: 0,
+                            title: '',
+                            description: '',
+                            start: start,
+                            end: end,
+                            color: '',
+                            allDay: false
+                        };
+                        OpenAddForm();
+                        $('#calendar').fullCalendar('unselect');
+                    },
+                    //this function is used to allow user just select 1 day at a time
+                    selectAllow: function (event) {
+                        return moment(event.start).utcOffset(false).isSame(moment(event.end).subtract(1, 'second').utcOffset(false), 'day');
+                    }
+                })
+            }
+
+            function OpenAddForm() {
+        @*if(selectedEvent != null){
+                $('#hdEventId').val(selectedEvent.id);
+                $('#txtSubject').val(selectedEvent.title);
+                $('#txtStart').val(selectedEvent.start.format('DD/MM/YYYY HH:mm A'));
+                $('#txtEnd').val(selectedEvent.end != null ? selectedEvent.end.format('DD/MM/YYYY HH:mm A'));
+                $('#txtDescription').val(selectedEvent.description);
+                $('ddThemeColor').val(selectedEvent.color);
+                }*@
+                    console.log(selectedEvent.start.format('DD-MM-YYYY'));
+                var timeSlot = $('#timeSlot').val();
+                var timeSplit = timeSlot.split(",");
+                console.log(timeSplit);
+                console.log(selectedEvent.start.format('YYYY-MM-DD') + timeSplit[0]);
+                $('#txtDate').val(selectedEvent.start.format('DD/MM/YYYY'))
+                $('#txtStart').val(selectedEvent.start.format('MM/DD/YYYY HH:mm A'));
+                $('#txtEnd').val(selectedEvent.end.format('MM/DD/YYYY HH:mm A'));
+                $("#boostrapModalFullCalendar").modal('hide');
+                $('#fullCalModalSave').modal();
+            }
+            $('#btnSave').click(function () {
+                if ($('#txtSubject').val().trim() == "") {
+                    alert('Subject required');
+                    return;
+                }
+        @*if($('#txtStart').val().trim() == ""){
+                alert('Start date required');
+                return;
+                }
+                else{
+                var startDate = moment($('#txtStart').val(), "DD/MM/YYYY HH:mm A").toDate();
+                console.log(startDate);
+                var endDate = moment($('#txtEnd').val(), "DD/MM/YYYY HH:mm A").toDate();
+                if( startDate > endDate){
+                alert('Invalid end date');
+                return;
+                }
+                }*@
+                        var date = selectedEvent.start.format('YYYY-MM-DD');
+                var timeSlot = $('#timeSlot').val();
+                var timeSplit = timeSlot.split(",");
+                var data = {
+                    title: $('#txtSubject').val().trim(),
+                    description: $('#txtDescription').val(),
+                    start: date + timeSplit[0],
+                    end: date + timeSplit[1],
+                    color: $('#ddThemeColor').val(),
+                    allDay: false
+                }
+                SaveEvent(data);
+            })
+            function SaveEvent(data) {
+                $.ajax({
+                    type: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    url: 'https://localhost:5001/api/Event',
+                    data: JSON.stringify(data),
+                    success: function (data) {
+                        $("#fullCalModalSave").modal('hide');
+                        FetchEventNRerenderCalendar();
+                    },
+                    error: function () {
+                        alert('Failed');
+                    }
+                })
+            }
+
+        })
+        @*var events = [];
+        var selectedEvent = null;
+        FetchEventNReRenderCalendar();
+        function FetchEventNReRenderCalendar(){
+        events = [];
+        $.ajax({
+        type: "GET",
+        url: "https://localhost:5001/api/event",
+        success: function (data) {
+        $.each(data, function (i, v) {
+        events.push({
+        title: v.title,
+        description: v.description,
+        start: moment(v.start),
+        end: v.end != null ? moment(v.end) : null,
+        color: v.color,
+        allDay: v.allDay
+        });
+        });
+        },
+        error: function (error) {
+        alert("Failed");
+        }
+        })
+        }
+        */
+        /*$('#boostrapModalFullCalendar').fullCalendar('destroy');
+        $('#boostrapModalFullCalendar').fullCalendar({
+        header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,basicWeek,basicDay,agenda'
+        },
+        eventClick: function (event, jsEvent, view) {
+        selectedEvent = event;
+        $('#modalTitle').html(event.title);
+        var $description = $('<div/>');
+        $description.append($('<p/>').html('<b>Start: </b>' + event.start.format("DD-MMM-YYYY HH:mm a")));
+        if (event.end != null) {
+        $description.append($('<p/>').html('<b>End: </b>' + event.end.format("DD-MMM-YYYY HH:mm a")));
+        }
+        $description.append($('<p/>').html('<b>Description: </b>' + event.description))
+        $('#modalBody').empty().html($description);
+        $('#eventUrl').attr('href', event.url);
+        $('#fullCalModal').modal();
+        return false;
+        },
+        events: 'https://localhost:5001/api/event',
+        contentHeight: 600,
+        defaultDate: new Date(),
+        timeFormat: 'h(:mm)a',
+        eventLimit: true
+        });
+        $('#btnEdit').click(function () {
+
+        })
+        $('#btnDelete').click(function () {
+        if (selectedEvent != null && confirm('Do you want to Delete?'))
+        $.ajax({
+        type: "POST",
+        url: "https://localhost:5001/api/Event/" + selectedEvent.id,
+        success: function (data) {
+        if (data.status) {
+        FetchEventNReRenderCalendar();
+        }
+        },
+        error: function () {
+        alert('Failed');
+        }
+        })
+        })
+        });*@
+    </script>
+    @*<script>
+        $(document).ready(function () {
+            var events = [];
+            $.ajax({
+                type: "GET",
+                url: "/home/GetEvents",
+                success: function (data) {
+                    $.each(data, function (i, v) {
+                        events.push({
+                            title: v.Subject,
+                            description: v.Description,
+                            start: moment(v.Start),
+                            end: v.End != null ? moment(v.End) : null,
+                            color: v.ThemeColor,
+                            allDay: v.IsFullDay
+
+                        });
+                    })
+                    GenerateCalendar(events);
+                },
+                error: function (error) {
+                    alert('failed');
+                }
+            })
+            function GenerateCalendar(events) {
+                $('#calendar').fullCalendar('destroy');
+                $('calendar').fullCalendar({
+                    contentHeight: 400,
+                    defaultDate: new Date(),
+                    timeFormat: 'h(:mm)a',
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,basicWeek, basicDay, agenda'
+                    },
+                    eventLimit: true,
+                    eventColor: '#378006',
+                    events: events
+                })
+            }
+        })
+    </script>*@
+    }
